@@ -1,29 +1,25 @@
-import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-import { Research } from "@/components/research";
-import { Projects } from "@/components/projects";
-import { Mirror } from "@/components/mirror";
-import { Footer } from "@/components/footer";
-import { Certificates } from "@/components/certificates";
-import { Contact } from "@/components/contact"; // Added Contact import
-import Particles from "@/components/particles";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ResearchSection } from "@/components/sections/ResearchSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { PublicationsSection } from "@/components/sections/PublicationsSection";
+import { CertificatesSection } from "@/components/sections/CertificatesSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col relative">
-      <Particles />
+    <main className="min-h-screen">
       <Header />
-      <main className="flex-1 pt-16">
-        <Hero />
-        <About />
-        <Research />
-        <Projects />
-        <Certificates />
-        <Contact /> {/* Added Contact component to the layout */}
-        <Mirror />
-      </main>
+      <HeroSection />
+      <AboutSection />
+      <ResearchSection />
+      <PublicationsSection />
+      <ProjectsSection />
+      <CertificatesSection />
+      <ContactSection />
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -7,7 +7,7 @@
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 6%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
     --popover: 222.2 84% 4.9%;
@@ -31,133 +31,103 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    --radius: 0.5rem;
   }
+}
 
+@layer base {
   * {
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Setting proper font size for better auto scaling */
+  html {
+    font-size: 16px; /* Base font size */
+  }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px; /* Smaller font size on mobile */
+    }
+  }
+
+  @media (min-width: 2000px) {
+    html {
+      font-size: 18px; /* Larger font size on very large screens */
+    }
+  }
+
+  /* Improve image rendering */
+  img, svg {
+    @apply max-w-full h-auto;
+  }
+
+  /* Scrollbar customization */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+
+  /* Improve focus states for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Disable tap highlight on mobile */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-/* Particle animation for AI theme */
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(
-    90deg,
-    rgba(45, 136, 255, 0.5),
-    rgba(131, 56, 236, 0.5)
-  );
-  animation: float 10s infinite ease-in-out;
-}
-
+/* Animation keyframes */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.2;
-  }
-  25% {
-    transform: translateY(-20px) translateX(10px);
-    opacity: 0.4;
+  0% {
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-40px) translateX(-10px);
-    opacity: 0.2;
+    transform: translateY(-10px);
   }
-  75% {
-    transform: translateY(-20px) translateX(-20px);
-    opacity: 0.4;
+  100% {
+    transform: translateY(0px);
   }
 }
 
-/* Neural network animation */
-.neural-node {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(45, 136, 255, 0.7);
-  position: absolute;
-  animation: pulse 3s infinite;
-}
-
-.neural-connection {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(45, 136, 255, 0.2),
-    rgba(131, 56, 236, 0.2)
-  );
-  position: absolute;
-  transform-origin: left center;
-  animation: pulse-line 3s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  50% {
-    transform: scale(1.5);
+  to {
     opacity: 1;
   }
 }
 
-@keyframes pulse-line {
-  0%, 100% {
-    opacity: 0.2;
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Improved container sizing for content sections */
+@layer components {
+  .section-container {
+    @apply container mx-auto px-4 md:px-6 max-w-7xl;
   }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-/* Gradient text animations */
-.gradient-text {
-  background-size: 200% 200%;
-  background-position: 0% 0%;
-  animation: gradient-shift 3s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-/* AI-themed scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #7c3aed);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #2563eb, #6d28d9);
 }

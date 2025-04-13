@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  distDir: 'out',
   images: {
     unoptimized: true,
     domains: [
@@ -9,10 +7,6 @@ const nextConfig = {
       "images.unsplash.com",
       "ext.same-assets.com",
       "ugc.same-assets.com",
-      "media.springernature.com",
-      "pub.mdpi-res.com",
-      "stpltrsrcscmnprdwus001.blob.core.windows.net",
-      "www.investopedia.com"
     ],
     remotePatterns: [
       {
@@ -35,26 +29,6 @@ const nextConfig = {
         hostname: "ugc.same-assets.com",
         pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "media.springernature.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "pub.mdpi-res.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "stpltrsrcscmnprdwus001.blob.core.windows.net",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.investopedia.com",
-        pathname: "/**",
-      },
     ],
   },
   typescript: {
@@ -62,6 +36,11 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
   },
 };
 

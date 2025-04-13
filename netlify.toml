@@ -1,19 +1,12 @@
+[images]
+  remote_images = ["https://ext.same-assets.com/*"]
+
 [build]
-  publish = "out"
   command = "bun run build"
+  publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--version"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
-[images]
-  remote_images = [
-    "https://media.springernature.com/**",
-    "https://pub.mdpi-res.com/**",
-    "https://stpltrsrcscmnprdwus001.blob.core.windows.net/**",
-    "https://www.investopedia.com/**"
-  ]
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
