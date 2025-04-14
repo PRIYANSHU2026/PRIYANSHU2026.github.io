@@ -23,7 +23,7 @@ const SocialLink = ({ icon: Icon, link, label }: { icon: React.ElementType; link
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Medical Imaging", "Mechanical Engineering", "Financial Analytics", "Electrical Systems"];
+const WORDS = ["Machine Learning", "Deep Learning ", "Natural Language processing ", "Large Language model","Federated Learning",];
 
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/PRIYANSHU2026", label: "GitHub" },
@@ -33,7 +33,6 @@ const SOCIAL_LINKS = [
 
 // Add array of machine learning GIFs
 const ML_GIFS = [
-  { src: "/ml-animation.gif", alt: "AI Neural Network Visualization" },
   { src: "/neural-network.gif", alt: "Neural Network Animation" },
   { src: "/brain-network.gif", alt: "Brain Network Visualization" }
 ];
@@ -141,7 +140,7 @@ export function HeroSection() {
               <p className="text-sm md:text-base text-gray-400 max-w-xl leading-relaxed font-light mx-auto lg:mx-0"
                 data-aos="fade-up"
                 data-aos-delay="1000">
-                Blending innovative research with practical implementations to build next-generation AI solutions that deliver tangible results.
+                A multidisciplinary AI/ML researcher blending innovative research with practical implementations to build next-generation AI solutions that deliver tangible results. Passionate about driving breakthroughs across domains such as Medical Imaging, Electrical Systems, Biotechnology, Finance, and Mechanical Engineering through the power of Artificial Intelligence and Machine Learning.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">

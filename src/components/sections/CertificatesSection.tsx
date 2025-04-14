@@ -291,8 +291,9 @@ const certificates: Certificate[] = [
 
 export function CertificatesSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.1 });
 
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -304,52 +305,43 @@ export function CertificatesSection() {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
-      y: 0,
       opacity: 1,
+      y: 0,
       transition: {
         duration: 0.5,
       },
     },
   };
 
-  // Category colors mapping
-  const categoryColors = {
-    research: "bg-purple-500/10 text-purple-400",
-    industry: "bg-blue-500/10 text-blue-400",
-    course: "bg-green-500/10 text-green-400",
-    "open-source": "bg-yellow-500/10 text-yellow-400",
-    conference: "bg-red-500/10 text-red-400",
-    hackathon: "bg-pink-500/10 text-pink-400",
-  };
-
-  // Function to render a certificate card
+  // Function to render certificate card
   const renderCertificateCard = (certificate: Certificate) => (
     <motion.div
       key={certificate.id}
       variants={itemVariants}
-      className="bg-slate-900/60 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-colors"
+      className="bg-slate-900/50 hover:bg-slate-900/70 backdrop-blur-sm border border-slate-800/60 hover:border-indigo-600/20 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-600/10"
     >
-      <div>
-        <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${categoryColors[certificate.category]}`}>
-          {certificate.category.replace("-", " ").charAt(0).toUpperCase() +
-            certificate.category.replace("-", " ").slice(1)}
+      <div className="flex flex-col h-full">
+        <div className="mb-2 flex justify-between items-start">
+          <div className="inline-block px-3 py-1 mb-2 text-xs font-medium rounded-full bg-indigo-600/10 text-indigo-400 border border-indigo-500/20">
+            {certificate.category.charAt(0).toUpperCase() + certificate.category.slice(1)}
+          </div>
+          <div className="text-sm text-gray-400">{formatDate(certificate.date)}</div>
         </div>
-        <h3 className="text-lg font-semibold mb-2 text-slate-100">
+        <h3 className="text-lg font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
           {certificate.title}
         </h3>
-        <p className="text-slate-300 mb-1">{certificate.organization}</p>
-        <p className="text-slate-400 text-sm mb-3">{formatDate(certificate.date)}</p>
+        <p className="text-sm text-gray-300 mb-4">{certificate.organization}</p>
         {certificate.credentialId && (
-          <p className="text-xs text-slate-500 mb-2">
-            Credential ID: {certificate.credentialId}
+          <p className="text-xs text-gray-400 mb-2">
+            <span className="font-semibold">Credential ID:</span> {certificate.credentialId}
           </p>
         )}
-        {certificate.skills && (
+        {certificate.skills && certificate.skills.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-2">
             {certificate.skills.map((skill, index) => (
-              <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300">
+              <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-indigo-500/10">
                 {skill}
               </span>
             ))}
@@ -358,7 +350,7 @@ export function CertificatesSection() {
       </div>
       {certificate.link && (
         <div className="mt-4">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="outline" size="sm" className="bg-transparent text-indigo-400 border-indigo-500/30 hover:bg-indigo-950/30 hover:text-indigo-300">
             <Link href={certificate.link} target="_blank">
               View <ExternalLink className="ml-2 h-3 w-3" />
             </Link>
@@ -370,13 +362,13 @@ export function CertificatesSection() {
 
   // Function to render hackathon certificates in a linear format
   const renderHackathonCertificates = (hackathonCertificates: Certificate[]) => (
-    <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-8">
-      <h3 className="text-xl font-semibold mb-6 text-slate-100 border-b border-slate-800 pb-4">
+    <div className="bg-slate-900/60 border border-slate-800/60 rounded-lg p-4 md:p-8">
+      <h3 className="text-xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 border-b border-slate-800 pb-4">
         Hackathon Participation & Achievements
       </h3>
       <div className="relative">
         {/* Vertical timeline line */}
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-500/30 ml-3"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-600/30 via-purple-600/30 to-indigo-600/30 ml-3"></div>
         <div className="space-y-8">
           {hackathonCertificates.map((certificate) => (
             <motion.div
@@ -386,25 +378,25 @@ export function CertificatesSection() {
             >
               {/* Timeline dot */}
               <div className="relative">
-                <div className="h-6 w-6 rounded-full border-2 border-blue-500 bg-slate-950 flex items-center justify-center -ml-3 z-10">
-                  <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                <div className="h-6 w-6 rounded-full border-2 border-indigo-500 bg-slate-950 flex items-center justify-center -ml-3 z-10">
+                  <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
                 </div>
               </div>
-              <div className="ml-6 flex-grow bg-slate-900/50 p-4 rounded-lg border border-slate-800 hover:border-slate-700 transition-all duration-200">
+              <div className="ml-6 flex-grow bg-slate-900/50 p-4 rounded-lg border border-slate-800/60 hover:border-indigo-600/20 hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-200">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-1">
-                  <h4 className="text-base font-medium text-slate-100">{certificate.title}</h4>
+                  <h4 className="text-base font-medium text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{certificate.title}</h4>
                   <span className="text-sm text-slate-400 whitespace-nowrap">{formatDate(certificate.date)}</span>
                 </div>
                 <p className="text-sm text-slate-300 mb-2">{certificate.organization}</p>
                 {certificate.credentialId && (
                   <p className="text-xs text-slate-500 mb-2">
-                    Credential ID: {certificate.credentialId}
+                    <span className="font-semibold">Credential ID:</span> {certificate.credentialId}
                   </p>
                 )}
-                {certificate.skills && (
-                  <div className="mt-2 flex flex-wrap gap-2">
+                {certificate.skills && certificate.skills.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-1">
                     {certificate.skills.map((skill, index) => (
-                      <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300">
+                      <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-indigo-500/10">
                         {skill}
                       </span>
                     ))}
@@ -412,7 +404,7 @@ export function CertificatesSection() {
                 )}
                 {certificate.link && (
                   <div className="mt-3">
-                    <Button asChild variant="outline" size="sm">
+                    <Button asChild variant="outline" size="sm" className="bg-transparent h-8 text-indigo-400 border-indigo-500/30 hover:bg-indigo-950/30 hover:text-indigo-300">
                       <Link href={certificate.link} target="_blank">
                         View Certificate <ExternalLink className="ml-2 h-3 w-3" />
                       </Link>
@@ -428,38 +420,83 @@ export function CertificatesSection() {
   );
 
   return (
-    <section id="certificates" className="py-20 bg-slate-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section id="certificates" className="py-12 md:py-20 relative overflow-x-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/10 to-slate-950 opacity-50"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-indigo-900/5 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-indigo-900/5 to-transparent"></div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="text-center mb-12 md:mb-16 relative">
+          {/* Decorative element */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl opacity-30"></div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
+            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10"
           >
             Certificates & Achievements
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-slate-300 max-w-3xl mx-auto"
+            className="text-slate-300 max-w-3xl mx-auto text-sm md:text-base relative z-10"
           >
-            Documentation of my journey through courses, internships, conferences, and achievements.
+            Showcasing my technical certifications, research contributions, and hackathon achievements.
           </motion.p>
         </div>
-        <h2 className="text-2xl font-bold text-center mb-8 text-slate-100">My Certificates</h2>
+
         <Tabs defaultValue="all" className="max-w-6xl mx-auto">
-          {/* Change the TabsList order to put hackathon right after All */}
-          <TabsList className="grid w-full grid-cols-7 mb-8">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="hackathon">Hackathons</TabsTrigger>
-            <TabsTrigger value="research">Research</TabsTrigger>
-            <TabsTrigger value="industry">Industry</TabsTrigger>
-            <TabsTrigger value="course">Courses</TabsTrigger>
-            <TabsTrigger value="open-source">Open Source</TabsTrigger>
-            <TabsTrigger value="conference">Conferences</TabsTrigger>
+          {/* Change the TabsList style to match the theme */}
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-7 mb-8 bg-slate-900/60 border border-slate-800/60 rounded-lg p-1 backdrop-blur-sm">
+            <TabsTrigger
+              value="all"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              All
+            </TabsTrigger>
+            <TabsTrigger
+              value="hackathon"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Hackathons
+            </TabsTrigger>
+            <TabsTrigger
+              value="research"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Research
+            </TabsTrigger>
+            <TabsTrigger
+              value="industry"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Industry
+            </TabsTrigger>
+            <TabsTrigger
+              value="course"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Courses
+            </TabsTrigger>
+            <TabsTrigger
+              value="open-source"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Open Source
+            </TabsTrigger>
+            <TabsTrigger
+              value="conference"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+            >
+              Conferences
+            </TabsTrigger>
           </TabsList>
+
           {/* All Certificates */}
           <TabsContent value="all">
             <motion.div
@@ -473,6 +510,7 @@ export function CertificatesSection() {
               {certificates.map(renderCertificateCard)}
             </motion.div>
           </TabsContent>
+
           {/* Hackathon Certificates in Timeline Format */}
           <TabsContent value="hackathon">
             <motion.div
@@ -484,6 +522,7 @@ export function CertificatesSection() {
               {renderHackathonCertificates(certificates.filter(cert => cert.category === "hackathon"))}
             </motion.div>
           </TabsContent>
+
           {/* Filtered Certificates for other categories */}
           {["research", "industry", "course", "open-source", "conference"].map((category) => (
             <TabsContent key={category} value={category}>
@@ -495,7 +534,7 @@ export function CertificatesSection() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {certificates
-                  .filter((certificate) => certificate.category === category)
+                  .filter((cert) => cert.category === category)
                   .map(renderCertificateCard)}
               </motion.div>
             </TabsContent>

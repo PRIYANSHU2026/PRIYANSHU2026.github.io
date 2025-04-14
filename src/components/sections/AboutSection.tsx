@@ -131,19 +131,19 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-12 md:py-20 overflow-x-hidden">
+      <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-center mb-16 relative">
+          <div className="text-center mb-10 md:mb-16 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
 
             <h2
-              className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
               data-aos="zoom-in-up"
               data-aos-duration="600"
             >
@@ -151,20 +151,20 @@ export function AboutSection() {
             </h2>
 
             <p
-              className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2 relative z-10"
+              className="mt-2 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base flex items-center justify-center gap-2 relative z-10"
               data-aos="zoom-in-up"
               data-aos-duration="800"
             >
-              <Sparkles className="w-5 h-5 text-purple-400" />
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
               AI Researcher and Machine Learning Engineer
-              <Sparkles className="w-5 h-5 text-purple-400" />
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
             </p>
           </div>
 
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
-            <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-16 items-center mb-12 md:mb-16">
+            <div className="space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold"
                 data-aos="fade-right"
                 data-aos-duration="1000"
               >
@@ -181,7 +181,7 @@ export function AboutSection() {
               </h2>
 
               <p
-                className="text-base sm:text-lg text-gray-400 leading-relaxed"
+                className="text-sm sm:text-base text-gray-400 leading-relaxed"
                 data-aos="fade-right"
                 data-aos-duration="1500"
               >
@@ -190,7 +190,7 @@ export function AboutSection() {
                 Financial Analytics, NLP, and Electrical Systems.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 lg:gap-4 lg:px-0 w-full">
                 <Link
                   href="/images/PRIYANSHU_TIWARI-3.pdf"
                   target="_blank"
@@ -199,8 +199,8 @@ export function AboutSection() {
                   data-aos="fade-up"
                   data-aos-duration="800"
                 >
-                  <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-600/20">
-                    <FileText className="w-5 h-5" /> Download CV
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-600/20">
+                    <FileText className="w-4 h-4 md:w-5 md:h-5" /> Download CV
                   </button>
                 </Link>
 
@@ -210,16 +210,16 @@ export function AboutSection() {
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
-                  <button className="w-full sm:w-auto px-6 py-3 rounded-lg border border-purple-600/50 text-purple-600 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10">
-                    <Code className="w-5 h-5" /> View Projects
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-600/50 text-purple-600 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10">
+                    <Code className="w-4 h-4 md:w-5 md:h-5" /> View Projects
                   </button>
                 </Link>
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end items-center order-1 lg:order-2">
+            <div className="flex justify-center lg:justify-end items-center order-1 lg:order-2 pb-4 lg:pb-0">
               <div
-                className="relative group"
+                className="relative group max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
@@ -230,7 +230,7 @@ export function AboutSection() {
                 </div>
 
                 <div className="relative">
-                  <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
+                  <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
                     <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
 
                     {/* Overlay effects */}
@@ -256,16 +256,16 @@ export function AboutSection() {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16 px-1">
             {statsData.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-right" data-aos-duration="1000">
-              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">My Journey</h3>
-              <div className="space-y-4 text-slate-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
+            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-right" data-aos-duration="1000">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">My Journey</h3>
+              <div className="space-y-3 md:space-y-4 text-slate-300 text-sm md:text-base">
                 <p>
                   My passion for artificial intelligence began during my undergraduate studies,
                   where I became fascinated with how machine learning could solve complex problems
@@ -283,12 +283,12 @@ export function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-left" data-aos-duration="1000">
-              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Technical Expertise</h3>
-              <div className="space-y-6">
+            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-left" data-aos-duration="1000">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Technical Expertise</h3>
+              <div className="space-y-4 md:space-y-6">
                 {technicalSkills.map((skillItem) => (
                   <div key={skillItem.category}>
-                    <h4 className="text-lg font-medium mb-2 text-slate-200">
+                    <h4 className="text-base md:text-lg font-medium mb-2 text-slate-200">
                       {skillItem.category}
                     </h4>
                     <TechStack technologies={skillItem.skills} />
@@ -318,16 +318,16 @@ export function AboutSection() {
 
               <TabsContent value="education" className="mt-6">
                 <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className="p-4 md:p-6 space-y-4">
                     <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
                       <div>
-                        <h3 className="text-lg font-medium text-slate-200">Kendriya Vidyalaya</h3>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Kendriya Vidyalaya</h3>
                         <p className="text-sm text-slate-300">PCMCS 10+2</p>
                         <p className="text-xs text-slate-400">2010 - 2022</p>
                         <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">Grade: 1st class</p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-medium text-slate-200">Sir M Visvesvaraya Institute of Technology</h3>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Sir M Visvesvaraya Institute of Technology</h3>
                         <p className="text-sm text-slate-300">Artificial Intelligence and Machine Learning (B.E)</p>
                         <p className="text-xs text-slate-400">2022 - 2026</p>
                         <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">CGPA: 8.00</p>
@@ -339,10 +339,10 @@ export function AboutSection() {
 
               <TabsContent value="experience" className="mt-6">
                 <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className="p-4 md:p-6 space-y-4">
                     <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
                       <div>
-                        <h3 className="text-lg font-medium text-slate-200">Research Intern</h3>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Research Intern</h3>
                         <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DRDO – Microwave Tube Research & Development Centre (MTRDC)</p>
                         <p className="text-xs text-slate-400">Nov 2024 – Dec 2024</p>
                         <p className="text-sm text-slate-300 mt-1">
@@ -350,7 +350,7 @@ export function AboutSection() {
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-medium text-slate-200">Machine Learning Researcher</h3>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Machine Learning Researcher</h3>
                         <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Unboxing Community</p>
                         <p className="text-xs text-slate-400">Sep 2024 – Nov 2024</p>
                         <p className="text-sm text-slate-300 mt-1">
@@ -358,7 +358,7 @@ export function AboutSection() {
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-medium text-slate-200">Research Intern</h3>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Research Intern</h3>
                         <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DRDO – Centre for Artificial Intelligence and Robotics (CAIR)</p>
                         <p className="text-xs text-slate-400">April 2024 – May 2024</p>
                         <p className="text-sm text-slate-300 mt-1">
