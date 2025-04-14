@@ -27,14 +27,17 @@ const WORDS = ["Machine Learning", "Deep Learning ", "Natural Language processin
 
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/PRIYANSHU2026", label: "GitHub" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/priyanshu-tiwari-ml/", label: "LinkedIn" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/priyanshu-tiwari-305661258/", label: "LinkedIn" },
   { icon: Mail, link: "mailto:priyanshutiwari112@gmail.com", label: "Email" }
 ];
 
 // Add array of machine learning GIFs
 const ML_GIFS = [
-  { src: "/neural-network.gif", alt: "Neural Network Animation" },
-  { src: "/brain-network.gif", alt: "Brain Network Visualization" }
+  { src: "/photo.HEIC", alt: "IEE International Conference" },
+  { src: "/photo2.HEIC", alt: "Brain Network Visualization" },
+  { src: "/photo3.jpg", alt: "Brain Network Visualization" },
+  { src: "/photo4.HEIC", alt: "Brain Network Visualization" },
+  { src: "/photo5.HEIC", alt: "Brain Network Visualization" },
 ];
 
 export function HeroSection() {

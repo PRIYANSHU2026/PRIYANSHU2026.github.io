@@ -107,8 +107,16 @@ export function AboutSection() {
     {
       icon: Code,
       color: "from-indigo-600 to-purple-600",
+      value: "200+",
+      label: "Open Source Projects",
+      description: "AI & ML solutions developed",
+      animation: "fade-right",
+    },
+    {
+      icon: Code,
+      color: "from-indigo-600 to-purple-600",
       value: "10+",
-      label: "Projects",
+      label: "Research Projects",
       description: "AI & ML solutions developed",
       animation: "fade-right",
     },
