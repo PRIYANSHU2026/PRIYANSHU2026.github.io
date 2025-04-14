@@ -11,10 +11,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Priyanshu Tiwari | AI/ML Researcher",
-  description: "AI/ML Researcher and former DRDO Research Intern. Proficient in Python, Machine Learning, and passionate about cutting-edge research.",
-  authors: [{ name: "Priyanshu Tiwari" }],
-  keywords: ["AI", "Machine Learning", "Research", "Computer Vision", "Deep Learning", "Portfolio"],
+  title: "Frontend Developer Portfolio",
+  description: "Creating innovative, functional, and user-friendly websites for digital solutions.",
+  authors: [{ name: "Your Name" }],
+  keywords: ["Frontend", "Developer", "Portfolio", "React", "JavaScript"],
 };
 
 export const viewport: Viewport = {
@@ -22,7 +22,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#0f172a',
+  themeColor: '#030014',
   colorScheme: 'dark',
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <ClientBody>
-        <div className={`font-sans bg-slate-950 text-white antialiased ${inter.variable}`}>
+        <div className={`font-sans bg-[#030014] text-white antialiased ${inter.variable}`}>
           {children}
           <Toaster position="top-center" richColors closeButton />
         </div>

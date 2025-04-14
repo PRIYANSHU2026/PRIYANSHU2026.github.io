@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { ExternalLink, Code2 } from "lucide-react";
+import { ExternalLink, Code2, ArrowRight } from "lucide-react";
 
 interface ProjectTag {
   name: string;
@@ -162,7 +162,7 @@ const projects: Project[] = [
   },
 ];
 
-// Project card component
+// Enhanced Project card component with better styling
 function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
@@ -170,65 +170,90 @@ function ProjectCard({ project }: { project: Project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.1 }}
       transition={{ duration: 0.5 }}
-      className="group h-full"
+      className="group relative w-full h-full"
+      data-aos="fade-up"
     >
-      <div className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 group-hover:translate-y-[-4px]">
-        {/* Image container with perfect square aspect ratio */}
-        <div className="relative w-full pt-[100%] overflow-hidden">
-          <div className="absolute inset-0 rounded-t-2xl overflow-hidden">
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-indigo-500/20 h-full flex flex-col">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-indigo-500/10 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+        <div className="relative p-5 z-10 flex flex-col h-full">
+          <div className="relative overflow-hidden rounded-lg mb-4">
             <Image
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={400}
+              height={225}
+              className="w-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
 
-          {/* Overlay content on hover */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-            <h4 className="text-sm font-semibold text-slate-200 mb-2">Technologies:</h4>
-            <div className="flex flex-wrap gap-2 mb-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={`${project.id}-${tag.name}`}
-                  className={`${tag.color} bg-opacity-30 text-xs px-2 py-0.5 rounded-full text-white border border-opacity-20 ${tag.color.replace('bg-', 'border-')}`}
-                >
-                  {tag.name}
-                </span>
-              ))}
+            {/* Overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-slate-200 mb-2">Technologies:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={`${project.id}-${tag.name}`}
+                      className={`${tag.color} bg-opacity-30 text-xs px-2 py-0.5 rounded-full text-white border border-opacity-20 ${tag.color.replace('bg-', 'border-')}`}
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="bg-slate-600 bg-opacity-30 text-xs px-2 py-0.5 rounded-full text-white border border-slate-600 border-opacity-20">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Content section */}
-        <div className="p-5 flex-grow flex flex-col">
-          <h3 className="text-lg font-semibold mb-2 text-slate-100 line-clamp-2">
-            {project.title}
-          </h3>
+          <div className="flex-grow space-y-3">
+            <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-indigo-200 bg-clip-text text-transparent">
+              {project.title}
+            </h3>
 
-          <p className="text-slate-300 text-sm mb-4 line-clamp-3 flex-grow">
-            {project.description}
-          </p>
-
-          <div className="flex gap-3 mt-auto">
-            <Button asChild variant="outline" size="sm" className="bg-slate-950/50 border-slate-800 w-full">
-              <Link href={project.github} target="_blank">
-                <FaGithub className="mr-2 h-4 w-4" />
-                Code
-              </Link>
-            </Button>
-
-            {project.demo && project.demo !== "#" ? (
-              <Button asChild size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
-                <Link href={project.demo} target="_blank">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Demo
-                </Link>
-              </Button>
-            ) : null}
+            <p className="text-gray-300/80 text-sm leading-relaxed line-clamp-3">
+              {project.description}
+            </p>
           </div>
+
+          <div className="pt-4 flex items-center justify-between mt-4">
+            <Link
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
+            >
+              <span className="text-sm font-medium">GitHub</span>
+              <FaGithub className="w-4 h-4" />
+            </Link>
+
+            {project.demo ? (
+              <Link
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+              >
+                <span className="text-sm font-medium">Demo</span>
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            ) : (
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+              >
+                <span className="text-sm font-medium">Details</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
+          </div>
+
+          <div className="absolute inset-0 border border-white/0 group-hover:border-purple-500/50 rounded-xl transition-colors duration-300 -z-50"></div>
         </div>
       </div>
     </motion.div>
@@ -240,36 +265,43 @@ export function ProjectsSection() {
   const isInView = useInView(ref, { once: false, amount: 0.1 });
 
   return (
-    <section id="projects" className="py-20 bg-slate-950 overflow-hidden">
+    <section id="projects" className="py-20 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
+            className="text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10"
+            data-aos="fade-up"
           >
             Projects & Applications
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-slate-300 max-w-3xl mx-auto"
+            className="text-slate-300 max-w-3xl mx-auto relative z-10"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             Showcasing the practical applications of my research in artificial
             intelligence and machine learning.
           </motion.p>
         </div>
 
-        <h2 className="text-2xl font-bold text-center mb-8 text-slate-100">My Projects</h2>
-
         <div
           ref={ref}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
           ))}
         </div>
       </div>

@@ -1,14 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  output: 'export', // Adding output: 'export' will create a static export which works well with Vercel
+  distDir: 'out',
   images: {
     unoptimized: true,
     domains: [
+      "ext.same-assets.com",
       "source.unsplash.com",
       "images.unsplash.com",
-      "ext.same-assets.com",
       "ugc.same-assets.com",
     ],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ext.same-assets.com",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "source.unsplash.com",
@@ -17,11 +25,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "ext.same-assets.com",
         pathname: "/**",
       },
       {
@@ -36,11 +39,6 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
   },
 };
 
