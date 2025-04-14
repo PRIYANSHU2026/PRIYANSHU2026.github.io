@@ -55,19 +55,22 @@ const StatCard = ({ icon: Icon, color, value, label, description, animation }: {
   description: string;
   animation: string;
 }) => (
-  <div data-aos={animation} data-aos-duration={1300} className="relative group">
-    <div className="relative z-10 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.5 }}
+    className="relative group"
+  >
+    <div className="relative z-10 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
 
       <div className="flex items-center justify-between mb-4">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/10 transition-transform group-hover:rotate-6">
-          <Icon className="w-8 h-8 text-white" />
+        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-white/10 transition-transform group-hover:rotate-6">
+          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         </div>
         <span
-          className="text-4xl font-bold text-white"
-          data-aos="fade-up-left"
-          data-aos-duration="1500"
-          data-aos-anchor-placement="top-bottom"
+          className="text-2xl sm:text-4xl font-bold text-white"
         >
           {value}
         </span>
@@ -75,19 +78,13 @@ const StatCard = ({ icon: Icon, color, value, label, description, animation }: {
 
       <div>
         <p
-          className="text-sm uppercase tracking-wider text-gray-300 mb-2"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-anchor-placement="top-bottom"
+          className="text-xs sm:text-sm uppercase tracking-wider text-gray-300 mb-2"
         >
           {label}
         </p>
         <div className="flex items-center justify-between">
           <p
             className="text-xs text-gray-400"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="top-bottom"
           >
             {description}
           </p>
@@ -95,7 +92,7 @@ const StatCard = ({ icon: Icon, color, value, label, description, animation }: {
         </div>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 export function AboutSection() {
@@ -109,14 +106,6 @@ export function AboutSection() {
       color: "from-indigo-600 to-purple-600",
       value: "200+",
       label: "Open Source Projects",
-      description: "AI & ML solutions developed",
-      animation: "fade-right",
-    },
-    {
-      icon: Code,
-      color: "from-indigo-600 to-purple-600",
-      value: "10+",
-      label: "Research Projects",
       description: "AI & ML solutions developed",
       animation: "fade-right",
     },
@@ -139,29 +128,25 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-20 overflow-x-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section id="about" className="py-12 md:py-20 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-center mb-10 md:mb-16 relative">
+          <div className="text-center mb-8 md:mb-16 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
 
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
-              data-aos="zoom-in-up"
-              data-aos-duration="600"
             >
               About Me
             </h2>
 
             <p
               className="mt-2 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base flex items-center justify-center gap-2 relative z-10"
-              data-aos="zoom-in-up"
-              data-aos-duration="800"
             >
               <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
               AI Researcher and Machine Learning Engineer
@@ -169,20 +154,51 @@ export function AboutSection() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-16 items-center mb-12 md:mb-16">
-            <div className="space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
+          {/* Profile section - better mobile layout */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-12">
+            <div className="lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-2">
+              <div
+                className="relative group max-w-[220px] sm:max-w-[280px] md:max-w-[320px]"
+              >
+                {/* Gradient backgrounds - reduced for mobile */}
+                <div className="absolute -inset-4 sm:-inset-6 opacity-[25%] z-0 hidden sm:block">
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-500 to-purple-600 rounded-full blur-2xl animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-purple-500 via-indigo-500 to-purple-600 rounded-full blur-2xl opacity-50" />
+                </div>
+
+                <div className="relative">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
+                    <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
+
+                    {/* Overlay effects - simplified for mobile */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    <Image
+                      src="/images/profile.jpeg"
+                      alt="Priyanshu Tiwari"
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                    />
+
+                    {/* Simpler hover effects for better performance */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:w-1/2 space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
               <h2
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold"
-                data-aos="fade-right"
-                data-aos-duration="1000"
               >
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
                   Hello, I'm
                 </span>
                 <span
                   className="block mt-2 text-gray-200"
-                  data-aos="fade-right"
-                  data-aos-duration="1300"
                 >
                   Priyanshu Tiwari
                 </span>
@@ -190,22 +206,18 @@ export function AboutSection() {
 
               <p
                 className="text-sm sm:text-base text-gray-400 leading-relaxed"
-                data-aos="fade-right"
-                data-aos-duration="1500"
               >
                 I'm an AI/ML Researcher with experience at DRDO and UBC, focusing on cutting-edge applications of
                 artificial intelligence and machine learning. My research spans multiple domains, including Medical Imaging,
                 Financial Analytics, NLP, and Electrical Systems.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 lg:gap-4 lg:px-0 w-full">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 w-full">
                 <Link
                   href="/images/PRIYANSHU_TIWARI-3.pdf"
                   target="_blank"
                   download
                   className="w-full sm:w-auto"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
                 >
                   <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-600/20">
                     <FileText className="w-4 h-4 md:w-5 md:h-5" /> Download CV
@@ -215,8 +227,6 @@ export function AboutSection() {
                 <Link
                   href="#projects"
                   className="w-full sm:w-auto"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
                 >
                   <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-600/50 text-purple-600 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10">
                     <Code className="w-4 h-4 md:w-5 md:h-5" /> View Projects
@@ -224,54 +234,17 @@ export function AboutSection() {
                 </Link>
               </div>
             </div>
-
-            <div className="flex justify-center lg:justify-end items-center order-1 lg:order-2 pb-4 lg:pb-0">
-              <div
-                className="relative group max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                {/* Gradient backgrounds */}
-                <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-500 to-purple-600 rounded-full blur-2xl animate-pulse" />
-                  <div className="absolute inset-0 bg-gradient-to-l from-purple-500 via-indigo-500 to-purple-600 rounded-full blur-2xl opacity-50" />
-                </div>
-
-                <div className="relative">
-                  <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
-                    <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
-
-                    {/* Overlay effects */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
-
-                    <Image
-                      src="/images/profile.jpeg"
-                      alt="Priyanshu Tiwari"
-                      fill
-                      className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-                    />
-
-                    {/* Hover effects */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16 px-1">
+          {/* Stats Cards - improved mobile layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
             {statsData.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-right" data-aos-duration="1000">
+            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300">
               <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">My Journey</h3>
               <div className="space-y-3 md:space-y-4 text-slate-300 text-sm md:text-base">
                 <p>
@@ -291,7 +264,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300" data-aos="fade-left" data-aos-duration="1000">
+            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300">
               <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Technical Expertise</h3>
               <div className="space-y-4 md:space-y-6">
                 {technicalSkills.map((skillItem) => (
@@ -306,8 +279,8 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Education and Experience Tabs */}
-          <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
+          {/* Education and Experience Tabs - fixed for mobile */}
+          <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="education" className="w-full">
               <TabsList className="grid w-full grid-cols-2 bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
                 <TabsTrigger
@@ -381,16 +354,6 @@ export function AboutSection() {
           </div>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-        @keyframes spin-slower {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </section>
   );
 }

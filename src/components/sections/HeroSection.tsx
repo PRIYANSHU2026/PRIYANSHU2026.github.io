@@ -37,7 +37,7 @@ const ML_GIFS = [
   { src: "/photo2.HEIC", alt: "Brain Network Visualization" },
   { src: "/photo3.jpg", alt: "Brain Network Visualization" },
   { src: "/photo4.HEIC", alt: "Brain Network Visualization" },
-  { src: "/photo5.HEIC", alt: "Brain Network Visualization" },
+  
 ];
 
 export function HeroSection() {

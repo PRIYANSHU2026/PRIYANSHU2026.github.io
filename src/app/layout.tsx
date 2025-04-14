@@ -11,16 +11,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Frontend Developer Portfolio",
-  description: "Creating innovative, functional, and user-friendly websites for digital solutions.",
-  authors: [{ name: "Your Name" }],
-  keywords: ["Frontend", "Developer", "Portfolio", "React", "JavaScript"],
+  title: "Priyanshu Tiwari | AI/ML Researcher",
+  description: "AI/ML Researcher with focus on Deep Learning, Natural Language Processing, and Computer Vision.",
+  authors: [{ name: "Priyanshu Tiwari" }],
+  keywords: ["AI", "Machine Learning", "Researcher", "Python", "Deep Learning", "NLP", "Computer Vision"],
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  minimumScale: 1,
   userScalable: true,
   themeColor: '#030014',
   colorScheme: 'dark',

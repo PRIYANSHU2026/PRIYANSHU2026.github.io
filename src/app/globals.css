@@ -46,6 +46,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   /* Setting proper font size for better auto scaling */
@@ -53,9 +54,16 @@
     font-size: 16px; /* Base font size */
   }
 
-  @media (max-width: 640px) {
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 480px) {
     html {
-      font-size: 14px; /* Smaller font size on mobile */
+      font-size: 14px; /* Smaller font size on small phones */
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 640px) {
+    html {
+      font-size: 15px; /* Slightly larger for bigger phones */
     }
   }
 
@@ -72,7 +80,7 @@
 
   /* Scrollbar customization */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -128,6 +136,32 @@
 /* Improved container sizing for content sections */
 @layer components {
   .section-container {
-    @apply container mx-auto px-4 md:px-6 max-w-7xl;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Mobile optimization helpers */
+  .mobile-padding {
+    @apply px-4 sm:px-6 py-6 sm:py-8;
+  }
+
+  .mobile-spacing {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+
+  .responsive-flex {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
+  }
+
+  /* Theme consistent gradients */
+  .theme-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+
+  .theme-gradient-bg {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600;
   }
 }
