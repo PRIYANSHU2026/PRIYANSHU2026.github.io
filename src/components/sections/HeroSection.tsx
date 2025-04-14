@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // Memoized Components for better performance
@@ -31,6 +31,13 @@ const SOCIAL_LINKS = [
   { icon: Mail, link: "mailto:priyanshutiwari112@gmail.com", label: "Email" }
 ];
 
+// Add array of machine learning GIFs
+const ML_GIFS = [
+  { src: "/ml-animation.gif", alt: "AI Neural Network Visualization" },
+  { src: "/neural-network.gif", alt: "Neural Network Animation" },
+  { src: "/brain-network.gif", alt: "Brain Network Visualization" }
+];
+
 export function HeroSection() {
   const [text, setText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -38,11 +45,30 @@ export function HeroSection() {
   const [charIndex, setCharIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [currentGifIndex, setCurrentGifIndex] = useState(0);
 
   useEffect(() => {
     setIsLoaded(true);
     return () => setIsLoaded(false);
   }, []);
+
+  // Auto change GIF every 5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentGifIndex(prev => (prev + 1) % ML_GIFS.length);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Function to manually change the GIF
+  const changeGif = (direction: 'next' | 'prev') => {
+    if (direction === 'next') {
+      setCurrentGifIndex(prev => (prev + 1) % ML_GIFS.length);
+    } else {
+      setCurrentGifIndex(prev => (prev - 1 + ML_GIFS.length) % ML_GIFS.length);
+    }
+  };
 
   // Typing effect
   const handleTyping = useCallback(() => {
@@ -73,11 +99,11 @@ export function HeroSection() {
   }, [handleTyping, isTyping]);
 
   return (
-    <section id="home" className="relative pt-32 pb-24 overflow-hidden min-h-screen flex items-center">
-      <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+    <section id="home" className="relative py-16 md:py-24 lg:py-28 overflow-hidden min-h-[85vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-center">
+      <div className={`relative z-10 transition-all duration-1000 w-full ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
           <motion.div
-            className="lg:w-1/2 text-center lg:text-left"
+            className="w-full lg:w-1/2 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -86,7 +112,7 @@ export function HeroSection() {
           >
             <div className="space-y-4 sm:space-y-6">
               <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-tight">
                   <span className="relative inline-block">
                     <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-20"></span>
                     <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
@@ -105,21 +131,21 @@ export function HeroSection() {
 
               {/* Typing Effect */}
               <div className="h-8 flex items-center justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="800">
-                <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                <span className="text-lg md:text-xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
                   {text}
                 </span>
                 <span className="w-[3px] h-6 bg-gradient-to-t from-indigo-600 to-purple-600 ml-1 animate-pulse"></span>
               </div>
 
               {/* Description */}
-              <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
+              <p className="text-sm md:text-base text-gray-400 max-w-xl leading-relaxed font-light mx-auto lg:mx-0"
                 data-aos="fade-up"
                 data-aos-delay="1000">
                 Blending innovative research with practical implementations to build next-generation AI solutions that deliver tangible results.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">
-                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">
+                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-lg transition-all duration-300">
                   <Link
                     to="about"
                     spy={true}
@@ -132,7 +158,7 @@ export function HeroSection() {
                     <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </Link>
                 </Button>
-                <Button asChild className="group relative overflow-hidden border border-indigo-600/50 hover:border-indigo-600 text-white px-6 py-2 rounded-lg transition-all duration-300">
+                <Button asChild className="group relative overflow-hidden border border-indigo-600/50 hover:border-indigo-600 text-white px-5 py-2 rounded-lg transition-all duration-300">
                   <Link
                     to="contact"
                     spy={true}
@@ -148,7 +174,7 @@ export function HeroSection() {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1400">
+              <div className="flex gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1400">
                 {SOCIAL_LINKS.map((social, index) => (
                   <SocialLink key={index} {...social} />
                 ))}
@@ -157,7 +183,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="lg:w-1/2 flex items-center justify-center"
+            className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             data-aos="fade-left"
@@ -166,16 +192,58 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="relative w-full h-full max-w-xl max-h-xl overflow-hidden rounded-xl">
+            <div className="relative w-full h-full max-w-md mx-auto lg:max-w-lg overflow-hidden rounded-xl">
               <div className={`absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl blur-3xl transition-all duration-700 ease-in-out ${
                 isHovering ? "opacity-70 scale-105" : "opacity-30 scale-100"
               }`}></div>
 
-              <img
-                src="/ml-animation.gif"
-                alt="AI Neural Network Visualization"
-                className="w-full h-auto object-cover rounded-xl border border-indigo-500/30 shadow-xl z-10 relative"
-              />
+              {/* GIF Carousel */}
+              <div className="relative">
+                {/* The GIF */}
+                <motion.img
+                  key={currentGifIndex}
+                  src={ML_GIFS[currentGifIndex].src}
+                  alt={ML_GIFS[currentGifIndex].alt}
+                  className="w-full h-auto object-cover rounded-xl border border-indigo-500/30 shadow-xl z-10 relative"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+
+                {/* Navigation Buttons */}
+                <div className="absolute top-1/2 left-0 right-0 flex justify-between -translate-y-1/2 px-2 z-20">
+                  <button
+                    onClick={() => changeGif('prev')}
+                    className="bg-black/40 backdrop-blur-sm hover:bg-black/60 text-white p-1.5 rounded-full transition-all"
+                    aria-label="Previous GIF"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={() => changeGif('next')}
+                    className="bg-black/40 backdrop-blur-sm hover:bg-black/60 text-white p-1.5 rounded-full transition-all"
+                    aria-label="Next GIF"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                </div>
+
+                {/* Indicators */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-20">
+                  {ML_GIFS.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentGifIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentGifIndex
+                          ? "bg-white scale-125"
+                          : "bg-white/50 hover:bg-white/80"
+                      }`}
+                      aria-label={`Switch to GIF ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
 
               <div className="absolute inset-0 rounded-xl border border-indigo-400/20 shadow-inner pointer-events-none"></div>
             </div>

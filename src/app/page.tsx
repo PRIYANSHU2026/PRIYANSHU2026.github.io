@@ -7,7 +7,6 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { PublicationsSection } from "@/components/sections/PublicationsSection";
 import { CertificatesSection } from "@/components/sections/CertificatesSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { EducationSection } from "@/components/sections/EducationSection";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ResearchSection />
-      <EducationSection />
       <PublicationsSection />
       <ProjectsSection />
       <CertificatesSection />
