@@ -17,7 +17,7 @@ interface SkillItem {
 const technicalSkills: SkillItem[] = [
   {
     category: "Programming",
-    skills: ["Python", "C Language", "C++", "Scala", "R"],
+    skills: ["Python", "C Language", "C++", "Scala", "R","Java Script"],
   },
   {
     category: "ML/AI Focus",
@@ -134,6 +134,14 @@ export function AboutSection() {
       value: "3",
       label: "Research Positions",
       description: "DRDO-CAIR, DRDO-MTRDC, UBC",
+      animation: "fade-left",
+    },
+    {
+      icon: Award,
+      color: "from-indigo-600 to-purple-600",
+      value: "126+",
+      label: "license & Certification",
+      description: "Variour Technical or Non Technical Certification ",
       animation: "fade-left",
     },
   ];
