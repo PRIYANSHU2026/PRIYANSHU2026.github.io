@@ -137,11 +137,11 @@ export function AboutSection() {
       animation: "fade-left",
     },
     {
-      icon: Award,
+      icon: certificate ,
       color: "from-indigo-600 to-purple-600",
       value: "126+",
       label: "license & Certification",
-      description: "Variour Technical or Non Technical Certification ",
+      description: "Various Technical or Non Technical Certification ",
       animation: "fade-left",
     },
   ];
