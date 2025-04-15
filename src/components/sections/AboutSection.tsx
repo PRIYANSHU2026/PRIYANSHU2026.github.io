@@ -17,7 +17,7 @@ interface SkillItem {
 const technicalSkills: SkillItem[] = [
   {
     category: "Programming",
-    skills: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "R"],
+    skills: ["Python", "C Language", "C++", "Scala", "R"],
   },
   {
     category: "ML/AI Focus",
@@ -42,6 +42,9 @@ const technicalSkills: SkillItem[] = [
       "Pandas",
       "NumPy",
       "Matplotlib",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn"
     ],
   },
 ];
