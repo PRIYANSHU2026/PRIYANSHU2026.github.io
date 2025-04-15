@@ -137,7 +137,7 @@ export function AboutSection() {
       animation: "fade-left",
     },
     {
-      icon: certificate ,
+      icon: Award,
       color: "from-indigo-600 to-purple-600",
       value: "126+",
       label: "license & Certification",
