@@ -33,6 +33,8 @@ const SOCIAL_LINKS = [
 
 // Add array of machine learning GIFs
 const ML_GIFS = [
+  { src: "/Gsoc1.JPG", alt: "Brain Network Visualization" },
+  { src: "/Gsoc2.PNG", alt: "Brain Network Visualization" },
   { src: "/photo2.jpg", alt: "Brain Network Visualization" },
   { src: "/photo3.jpg", alt: "Brain Network Visualization" },
   { src: "/photo4.jpg", alt: "Brain Network Visualization" }, 
