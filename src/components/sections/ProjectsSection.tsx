@@ -29,8 +29,8 @@ const projects: Project[] = [
     id: 1,
     title: "Harmony Hub: Adaptive Music Exercise Generator",
     description:
-      "GSOC 2025 project developing an AI-powered platform for generating personalized music exercises using transformer architectures and reinforcement learning for adaptive learning paths.",
-    image: "/images/projects/harmony-hub.jpg",
+      "GSOC 2025 project developing an AI-powered platform for generating personalized music exercises.",
+    image: "/images/projects/Gsoc.png",
     tags: [
       { name: "Generative AI", color: "bg-purple-500" },
       { name: "Music Tech", color: "bg-blue-500" },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "AI-Driven Financial Wellness Platform:Bank-Statement-Analysis-Phase-2",
     description:
       "Mifos Summer of Code 2025 project integrating ML and NLP for bank statement analysis, real-time insights, and adaptive budgeting strategies with interactive dashboards.",
-    image: "/images/projects/financial-wellness.jpg",
+    image: "/images/projects/Mifos.png",
     tags: [
       { name: "Financial AI", color: "bg-green-500" },
       { name: "NLP", color: "bg-blue-500" },
@@ -62,7 +62,7 @@ const projects: Project[] = [
     title: "AI-Based Stock Strategy System",
     description:
       "Comprehensive stock analysis platform combining technical indicators, sentiment analysis, and deep learning models for predictive trading strategies and portfolio optimization.",
-    image: "/images/projects/stock-ai.jpg",
+    image: "/images/projects/stock.png",
     tags: [
       { name: "Quant Finance", color: "bg-blue-500" },
       { name: "Deep Learning", color: "bg-purple-500" },
