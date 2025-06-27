@@ -342,6 +342,24 @@ export function AboutSection() {
                   <CardContent className="p-4 md:p-6 space-y-4">
                     <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
                       <div>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Google Summer of Code (GSoC) 2025 Contributor</h3>
+                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Open-Source Developer | International Neuroinformatics Coordinating Facility (INCF)</p>
+                        <p className="text-xs text-slate-400">May 2025 – Present</p>
+                        <p className="text-sm text-slate-300 mt-1">
+                          - Developed "Harmony Hub": generative AI platform for adaptive music learning using transformers
+                          <br />- Built music learning LLM to enhance student engagement
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base md:text-lg font-medium text-slate-200">Mifos Summer of Code (MSoC) 2025 Contributor</h3>
+                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Open-Source Developer | Mifos Initiative</p>
+                        <p className="text-xs text-slate-400">May 2025 – Present</p>
+                        <p className="text-sm text-slate-300 mt-1">
+                          - Enhanced Bank Statement Analyzer Phase 2
+                          <br />- Developed recommendation models for personalized financial insights
+                        </p>
+                      </div>
+                      <div>
                         <h3 className="text-base md:text-lg font-medium text-slate-200">Research Intern</h3>
                         <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DRDO – Microwave Tube Research & Development Centre (MTRDC)</p>
                         <p className="text-xs text-slate-400">Nov 2024 – Dec 2024</p>
