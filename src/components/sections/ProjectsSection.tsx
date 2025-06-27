@@ -43,7 +43,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "AI-Driven Financial Wellness Platform:Bank-Statement-Analysis-Phase-2",
+    title: "Bank-Statement-Analysis-Phase-2",
     description:
       "Mifos Summer of Code 2025 project integrating ML and NLP for bank statement analysis, real-time insights, and adaptive budgeting strategies with interactive dashboards.",
     image: "/images/projects/Mifos.png",
@@ -62,7 +62,7 @@ const projects: Project[] = [
     title: "AI-Based Stock Strategy System",
     description:
       "Comprehensive stock analysis platform combining technical indicators, sentiment analysis, and deep learning models for predictive trading strategies and portfolio optimization.",
-    image: "/images/projects/stock.png",
+    image: "/images/projects/Stock.png",
     tags: [
       { name: "Quant Finance", color: "bg-blue-500" },
       { name: "Deep Learning", color: "bg-purple-500" },
