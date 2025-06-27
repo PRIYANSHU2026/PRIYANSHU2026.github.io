@@ -25,50 +25,53 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
+   {
     id: 1,
-    title: "Bone Loss Detection on X-Ray Teeth",
+    title: "Harmony Hub: Adaptive Music Exercise Generator",
     description:
-      "Research project with Krishnadevaraya College of Dental Sciences & Hospital to detect bone loss in dental X-rays using deep learning algorithms.",
-    image: "/images/projects/bone-loss-detection.png",
+      "GSOC 2025 project developing an AI-powered platform for generating personalized music exercises using transformer architectures and reinforcement learning for adaptive learning paths.",
+    image: "/images/projects/harmony-hub.jpg",
     tags: [
-      { name: "Medical AI", color: "bg-red-500" },
-      { name: "Computer Vision", color: "bg-blue-500" },
-      { name: "Deep Learning", color: "bg-purple-500" },
-      { name: "Healthcare", color: "bg-green-500" },
+      { name: "Generative AI", color: "bg-purple-500" },
+      { name: "Music Tech", color: "bg-blue-500" },
+      { name: "Transformers", color: "bg-yellow-500" },
+      { name: "GSoC", color: "bg-green-500" },
     ],
-    technologies: ["Python", "TensorFlow", "OpenCV", "scikit-learn", "Keras"],
-    github: "https://github.com/PRIYANSHU2026/DENTAL-X-RAY.git",
+    technologies: ["Python", "PyTorch", "Transformers", "MIDI", "Music21", "Reinforcement Learning"],
+    github: "https://github.com/PRIYANSHU2026/Harmony-Hub-Phase-2.git",
+    demo: "https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator"
   },
   {
     id: 2,
-    title: "Combinational Health Model",
+    title: "AI-Driven Financial Wellness Platform:Bank-Statement-Analysis-Phase-2",
     description:
-      "Multi-disease prediction model developed under the guidance of Dr. Soumya Pati that combines multiple biomarkers for comprehensive health assessment.",
-    image: "/images/projects/health-model.png",
+      "Mifos Summer of Code 2025 project integrating ML and NLP for bank statement analysis, real-time insights, and adaptive budgeting strategies with interactive dashboards.",
+    image: "/images/projects/financial-wellness.jpg",
     tags: [
-      { name: "Machine Learning", color: "bg-blue-500" },
-      { name: "Healthcare", color: "bg-green-500" },
-      { name: "Predictive Models", color: "bg-yellow-500" },
-      { name: "Data Science", color: "bg-purple-500" },
+      { name: "Financial AI", color: "bg-green-500" },
+      { name: "NLP", color: "bg-blue-500" },
+      { name: "Dashboard", color: "bg-purple-500" },
+      { name: "MSoC", color: "bg-yellow-500" },
     ],
-    technologies: ["Python", "scikit-learn", "NumPy", "Pandas", "Matplotlib"],
-    github: "https://github.com/PRIYANSHU2026/combinational-health-model.git",
+    technologies: ["Python", "scikit-learn", "NLTK", "Flask", "React", "D3.js", "Pandas"],
+    github: "https://github.com/PRIYANSHU2026/Bank-Statement-Analysis-Phase-2",
+    demo: "https://github.com/PRIYANSHU2026/Bank-Statement-Analysis-Phase-2"
   },
   {
     id: 3,
-    title: "GIS-Based Urban Traffic Simulation",
+    title: "AI-Based Stock Strategy System",
     description:
-      "Simulated urban traffic congestion using the Mesa agent-based modeling framework and OSMnx for road network extraction, modeling real-world Bangalore traffic scenarios.",
-    image: "/images/projects/gis-traffic-simulation.jpg",
+      "Comprehensive stock analysis platform combining technical indicators, sentiment analysis, and deep learning models for predictive trading strategies and portfolio optimization.",
+    image: "/images/projects/stock-ai.jpg",
     tags: [
-      { name: "Agent-based Modeling", color: "bg-orange-500" },
-      { name: "GIS", color: "bg-blue-500" },
-      { name: "Mesa Framework", color: "bg-green-500" },
-      { name: "Traffic Simulation", color: "bg-yellow-500" },
+      { name: "Quant Finance", color: "bg-blue-500" },
+      { name: "Deep Learning", color: "bg-purple-500" },
+      { name: "Sentiment Analysis", color: "bg-green-500" },
+      { name: "Trading", color: "bg-red-500" },
     ],
-    technologies: ["Python", "Mesa", "OSMnx", "NetworkX", "Matplotlib", "GeoPandas"],
-    github: "https://github.com/PRIYANSHU2026/Traffic-Congetion-.git",
+    technologies: ["Python", "TensorFlow", "LSTM", "FinBERT", "TA-Lib", "Streamlit"],
+    github: "https://github.com/PRIYANSHU2026/Stock-AI-Based-Strategy-System",
+    demo: "https://stock-ai-based-strategy-system.vercel.app"
   },
   {
     id: 4,
@@ -159,6 +162,51 @@ const projects: Project[] = [
     ],
     technologies: ["Python", "TensorFlow", "Keras", "NumPy", "SciPy", "Matplotlib"],
     github: "https://github.com/PRIYANSHU2026/Transformer-Summarization.git",
+  },
+  {
+    id: 10,
+    title: "Bone Loss Detection on X-Ray Teeth",
+    description:
+      "Research project with Krishnadevaraya College of Dental Sciences & Hospital to detect bone loss in dental X-rays using deep learning algorithms.",
+    image: "/images/projects/bone-loss-detection.png",
+    tags: [
+      { name: "Medical AI", color: "bg-red-500" },
+      { name: "Computer Vision", color: "bg-blue-500" },
+      { name: "Deep Learning", color: "bg-purple-500" },
+      { name: "Healthcare", color: "bg-green-500" },
+    ],
+    technologies: ["Python", "TensorFlow", "OpenCV", "scikit-learn", "Keras"],
+    github: "https://github.com/PRIYANSHU2026/DENTAL-X-RAY.git",
+  },
+  {
+    id: 11,
+    title: "Combinational Health Model",
+    description:
+      "Multi-disease prediction model developed under the guidance of Dr. Soumya Pati that combines multiple biomarkers for comprehensive health assessment.",
+    image: "/images/projects/health-model.png",
+    tags: [
+      { name: "Machine Learning", color: "bg-blue-500" },
+      { name: "Healthcare", color: "bg-green-500" },
+      { name: "Predictive Models", color: "bg-yellow-500" },
+      { name: "Data Science", color: "bg-purple-500" },
+    ],
+    technologies: ["Python", "scikit-learn", "NumPy", "Pandas", "Matplotlib"],
+    github: "https://github.com/PRIYANSHU2026/combinational-health-model.git",
+  },
+  {
+    id: 12,
+    title: "GIS-Based Urban Traffic Simulation",
+    description:
+      "Simulated urban traffic congestion using the Mesa agent-based modeling framework and OSMnx for road network extraction, modeling real-world Bangalore traffic scenarios.",
+    image: "/images/projects/gis-traffic-simulation.jpg",
+    tags: [
+      { name: "Agent-based Modeling", color: "bg-orange-500" },
+      { name: "GIS", color: "bg-blue-500" },
+      { name: "Mesa Framework", color: "bg-green-500" },
+      { name: "Traffic Simulation", color: "bg-yellow-500" },
+    ],
+    technologies: ["Python", "Mesa", "OSMnx", "NetworkX", "Matplotlib", "GeoPandas"],
+    github: "https://github.com/PRIYANSHU2026/Traffic-Congetion-.git",
   },
 ];
 
