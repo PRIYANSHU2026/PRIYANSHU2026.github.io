@@ -19,14 +19,14 @@ const publications: Publication[] = [
     title: "Optimizing FAANG Stock Forecasting — The Power of Feature Engineering and LSTM in Financial Analysis",
     conference: "IEEE 5th International Conference on Artificial Intelligence and Data Engineering",
     year: 2025,
-    link: "10.1109/AIDE64228.2025.10987293",
+    link: "https://ieeexplore.ieee.org/document/10987293",
   },
   {
     id: 2,
     title: "Enhancing Fare Prediction Accuracy in Ride-Hailing Through Neural Networks and Data Simulation",
     conference: "IEEE 5th International Conference on Artificial Intelligence and Data Engineering",
     year: 2025,
-    link: "10.1109/AIDE64228.2025.10987321",
+    link: "https://ieeexplore.ieee.org/document/10987321",
   },
    {
     id: 3,
@@ -40,7 +40,7 @@ const publications: Publication[] = [
     title: "GIS-Based Urban Traffic Simulation Using Mesa Framework",
     conference: "Springer 2nd International Conference on Computing Science and Artificial Intelligence",
     year: 2024,
-    link: "#",
+    link: "https://link.springer.com/series/10533",
   },
   {
     id: 5,
