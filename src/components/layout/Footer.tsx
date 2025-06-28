@@ -10,8 +10,8 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Github, link: "https://github.com/PRIYANSHU2026", label: "GitHub" },
-    { icon: Linkedin, link: "https://www.linkedin.com/in/priyanshu-tiwari-ml/", label: "LinkedIn" },
-    { icon: Mail, link: "mailto:priyanshutiwari112@gmail.com", label: "Email" }
+    { icon: Linkedin, link: "https://www.linkedin.com/in/priyanshu-tiwari-305661258//", label: "LinkedIn" },
+    { icon: Mail, link: "mailto:techarena955@gmail.com", label: "Email" }
   ];
 
   return (
