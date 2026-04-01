@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import WelcomeScreen from "@/components/ui/WelcomeScreen";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import 'aos/dist/aos.css';
 
 export default function ClientBody({
   children,
@@ -20,7 +21,6 @@ export default function ClientBody({
     document.body.className = "";
 
     // Dynamically import AOS only on the client to avoid SSR localStorage crash
-    import('aos/dist/aos.css');
     import('aos').then((AOS) => {
       AOS.default.init({
         once: false,
