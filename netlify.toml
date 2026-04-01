@@ -1,5 +1,10 @@
 [images]
-  remote_images = ["https://ext.same-assets.com/**", "https://ugc.same-assets.com/**", "https://source.unsplash.com/**", "https://images.unsplash.com/**"]
+  remote_patterns = [
+    { protocol = "https", hostname = "ext.same-assets.com", pathname = "/**" },
+    { protocol = "https", hostname = "ugc.same-assets.com", pathname = "/**" },
+    { protocol = "https", hostname = "source.unsplash.com", pathname = "/**" },
+    { protocol = "https", hostname = "images.unsplash.com", pathname = "/**" }
+  ]
 
 [build]
   command = "npm run build"
