@@ -22,19 +22,20 @@ export default {
         md: '768px',
         lg: '1024px',
         xl: '1280px',
-        '2xl': '1400px', // Reduced from 1536px for better readability on larger screens
+        '2xl': '1400px',
       },
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['rgb(var(--font-inter) / <alpha-value>)', 'system-ui', 'sans-serif'],
+        mono: ['rgb(var(--font-jetbrains) / <alpha-value>)', 'JetBrains Mono', 'monospace'],
       },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: 'rgb(var(--bg-color) / <alpha-value>)',
+        foreground: 'rgb(var(--text-color) / <alpha-value>)',
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+          DEFAULT: 'rgb(var(--bg-color-alt) / <alpha-value>)',
+          foreground: 'rgb(var(--text-color) / <alpha-value>)'
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -69,15 +70,59 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
+        },
+        // GSoC / Google-inspired accent colors
+        gsoc: {
+          green: '#0d9488',
+          orange: '#f97316',
+          blue: '#4285F4',
+          red: '#EA4335',
+          yellow: '#FBBC04',
+        },
+        emerald: {
+          50: 'rgb(var(--c-emerald-50) / <alpha-value>)',
+          100: 'rgb(var(--c-emerald-100) / <alpha-value>)',
+          200: 'rgb(var(--c-emerald-200) / <alpha-value>)',
+          300: 'rgb(var(--c-emerald-300) / <alpha-value>)',
+          400: 'rgb(var(--c-emerald-400) / <alpha-value>)',
+          500: 'rgb(var(--c-emerald-500) / <alpha-value>)',
+          600: 'rgb(var(--c-emerald-600) / <alpha-value>)',
+          700: 'rgb(var(--c-emerald-700) / <alpha-value>)',
+          800: 'rgb(var(--c-emerald-800) / <alpha-value>)',
+          900: 'rgb(var(--c-emerald-900) / <alpha-value>)',
+          950: 'rgb(var(--c-emerald-950) / <alpha-value>)',
+        },
+        teal: {
+          50: 'rgb(var(--c-teal-50) / <alpha-value>)',
+          100: 'rgb(var(--c-teal-100) / <alpha-value>)',
+          200: 'rgb(var(--c-teal-200) / <alpha-value>)',
+          300: 'rgb(var(--c-teal-300) / <alpha-value>)',
+          400: 'rgb(var(--c-teal-400) / <alpha-value>)',
+          500: 'rgb(var(--c-teal-500) / <alpha-value>)',
+          600: 'rgb(var(--c-teal-600) / <alpha-value>)',
+          700: 'rgb(var(--c-teal-700) / <alpha-value>)',
+          800: 'rgb(var(--c-teal-800) / <alpha-value>)',
+          900: 'rgb(var(--c-teal-900) / <alpha-value>)',
+          950: 'rgb(var(--c-teal-950) / <alpha-value>)',
+        },
+        orange: {
+          400: 'rgb(var(--c-orange-400) / <alpha-value>)',
+          500: 'rgb(var(--c-orange-500) / <alpha-value>)',
+        },
+        amber: {
+          500: 'rgb(var(--c-amber-500) / <alpha-value>)',
+        },
+        cyan: {
+          300: 'rgb(var(--c-cyan-300) / <alpha-value>)',
         }
       },
       borderRadius: {
-        lg: 'var(--radius)',
+        lg: 'rgb(var(--radius) / <alpha-value>)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
       screens: {
-        'xs': '475px', // Add extra small breakpoint
+        'xs': '475px',
       },
     }
   },

@@ -15,14 +15,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="py-12 border-t border-slate-800/50 backdrop-blur-sm relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/0 via-slate-950/50 to-slate-950/90 pointer-events-none z-0" />
+    <footer className="py-12 border-t border-emerald-800/50 backdrop-blur-sm relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background/90 pointer-events-none z-0" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Priyanshu Tiwari</h3>
+              <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Priyanshu Tiwari</h3>
               <p className="text-sm text-slate-400 max-w-xs">
                 AI/ML Researcher with experience in cutting-edge applications of machine learning across diverse domains.
               </p>
@@ -32,11 +32,11 @@ export function Footer() {
             <div className="space-y-4">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Navigation</h3>
               <nav className="flex flex-col space-y-2">
-                <Link href="/" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Home</Link>
-                <Link href="#about" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">About</Link>
-                <Link href="#research" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Research</Link>
-                <Link href="#projects" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Projects</Link>
-                <Link href="#contact" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Contact</Link>
+                <Link href="/" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">Home</Link>
+                <Link href="#about" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">About</Link>
+                <Link href="#research" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">Research</Link>
+                <Link href="#projects" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">Projects</Link>
+                <Link href="#contact" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">Contact</Link>
               </nav>
             </div>
 
@@ -55,15 +55,15 @@ export function Footer() {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Contact</h3>
               <p className="text-sm text-slate-400">Feel free to reach out if you have any questions or would like to collaborate on a project.</p>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-indigo-400" />
-                <a href="mailto:priyanshutiwari112@gmail.com" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">
+                <Mail className="w-4 h-4 text-emerald-400" />
+                <a href="mailto:priyanshutiwari112@gmail.com" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">
                   priyanshutiwari112@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-800/30 flex flex-col sm:flex-row justify-between items-center">
+          <div className="pt-8 border-t border-emerald-800/30 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm text-slate-500 mb-4 sm:mb-0">
               © {currentYear} Priyanshu Tiwari. All rights reserved.
             </p>
@@ -73,7 +73,7 @@ export function Footer() {
                 href="/images/PRIYANSHU_TIWARI-3.pdf"
                 target="_blank"
                 download
-                className="flex items-center text-sm text-slate-400 hover:text-indigo-400 transition-colors"
+                className="flex items-center text-sm text-slate-400 hover:text-emerald-400 transition-colors"
               >
                 <span>Resume</span>
                 <ArrowUpRight className="ml-1 w-3 h-3" />
@@ -83,7 +83,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/priyanshu-tiwari-ml/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-slate-400 hover:text-indigo-400 transition-colors"
+                className="flex items-center text-sm text-slate-400 hover:text-emerald-400 transition-colors"
               >
                 <span>LinkedIn</span>
                 <ExternalLink className="ml-1 w-3 h-3" />

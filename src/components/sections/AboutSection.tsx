@@ -64,7 +64,7 @@ const StatCard = ({ icon: Icon, color, value, label, description, animation }: {
     transition={{ duration: 0.5 }}
     className="relative group"
   >
-    <div className="relative z-10 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-indigo-500/20 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:border-purple-500/40 h-full flex flex-col justify-between">
+    <div className="relative z-10 bg-card/50 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-emerald-500/20 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:border-teal-500/40 h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
 
       <div className="flex items-center justify-between mb-4">
@@ -105,7 +105,7 @@ export function AboutSection() {
   const statsData = [
     {
       icon: Code,
-      color: "from-indigo-600 to-purple-600",
+      color: "from-emerald-600 to-teal-600",
       value: "200+",
       label: "Open Source Projects",
       description: "AI & ML solutions developed",
@@ -113,7 +113,7 @@ export function AboutSection() {
     },
      {
       icon: Code,
-      color: "from-indigo-600 to-purple-600",
+      color: "from-emerald-600 to-teal-600",
       value: "10+",
       label: "Research Projects",
       description: "AI & ML solutions developed colaborated with Multiple Field",
@@ -121,7 +121,7 @@ export function AboutSection() {
     },
     {
       icon: Award,
-      color: "from-purple-600 to-indigo-600",
+      color: "from-teal-600 to-emerald-600",
       value: "5+",
       label: "Publications",
       description: "Research papers published",
@@ -129,7 +129,7 @@ export function AboutSection() {
     },
     {
       icon: Globe,
-      color: "from-indigo-600 to-purple-600",
+      color: "from-emerald-600 to-teal-600",
       value: "3",
       label: "Research Positions",
       description: "DRDO-CAIR, DRDO-MTRDC, UBC",
@@ -137,7 +137,7 @@ export function AboutSection() {
     },
     {
       icon: Award,
-      color: "from-indigo-600 to-purple-600",
+      color: "from-emerald-600 to-teal-600",
       value: "126+",
       label: "license & Certification",
       description: "Various Technical or Non Technical Certification ",
@@ -146,7 +146,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-20 overflow-hidden">
+    <section id="about" className="py-12 md:py-20 overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
@@ -155,10 +155,10 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-8 md:mb-16 relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-600/20 rounded-full blur-3xl opacity-30"></div>
 
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500 relative z-10 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 relative z-10 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
             >
               About Me
             </h2>
@@ -166,9 +166,9 @@ export function AboutSection() {
             <p
               className="mt-2 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base flex items-center justify-center gap-2 relative z-10"
             >
-              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-teal-400" />
               AI Researcher and Machine Learning Engineer
-              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-teal-400" />
             </p>
           </div>
 
@@ -180,8 +180,8 @@ export function AboutSection() {
               >
                 {/* Gradient backgrounds - reduced for mobile */}
                 <div className="absolute -inset-4 sm:-inset-6 opacity-[25%] z-0 hidden sm:block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-500 to-purple-600 rounded-full blur-2xl animate-pulse" />
-                  <div className="absolute inset-0 bg-gradient-to-l from-purple-500 via-indigo-500 to-purple-600 rounded-full blur-2xl opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-teal-600 rounded-full blur-2xl animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-teal-500 via-emerald-500 to-teal-600 rounded-full blur-2xl opacity-50" />
                 </div>
 
                 <div className="relative">
@@ -190,7 +190,7 @@ export function AboutSection() {
 
                     {/* Overlay effects - simplified for mobile */}
                     <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                     <Image
                       src="/images/profile.jpeg"
@@ -212,7 +212,7 @@ export function AboutSection() {
               <h2
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold"
               >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
                   Hello, I'm
                 </span>
                 <span
@@ -237,7 +237,7 @@ export function AboutSection() {
                   download
                   className="w-full sm:w-auto"
                 >
-                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-indigo-400/20">
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-emerald-400/20">
                     <FileText className="w-4 h-4 md:w-5 md:h-5" /> Download CV
                   </button>
                 </Link>
@@ -246,7 +246,7 @@ export function AboutSection() {
                   href="#projects"
                   className="w-full sm:w-auto"
                 >
-                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-600/50 text-purple-400 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10 shadow-[0_0_10px_rgba(168,85,247,0.1)] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-teal-600/50 text-teal-400 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-teal-600/10 shadow-[0_0_10px_rgba(168,85,247,0.1)] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                     <Code className="w-4 h-4 md:w-5 md:h-5" /> View Projects
                   </button>
                 </Link>
@@ -262,8 +262,8 @@ export function AboutSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300">
-              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">My Journey</h3>
+            <div className="bg-card/60 border border-emerald-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-emerald-600/10 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">My Journey</h3>
               <div className="space-y-3 md:space-y-4 text-slate-300 text-sm md:text-base">
                 <p>
                   My passion for artificial intelligence began during my undergraduate studies,
@@ -282,8 +282,8 @@ export function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300">
-              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Technical Expertise</h3>
+            <div className="bg-card/60 border border-emerald-800/70 backdrop-blur-sm p-4 md:p-6 rounded-xl hover:shadow-lg hover:shadow-emerald-600/10 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Technical Expertise</h3>
               <div className="space-y-4 md:space-y-6">
                 {technicalSkills.map((skillItem) => (
                   <div key={skillItem.category}>
@@ -299,23 +299,23 @@ export function AboutSection() {
 
           {/* Education Section */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-semibold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent text-center">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent text-center">
               Education
             </h3>
-            <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
+            <Card className="bg-card/60 border border-emerald-800/70 backdrop-blur-sm">
               <CardContent className="p-4 md:p-6 space-y-4">
-                <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
+                <div className="border-l-2 border-emerald-500 pl-4 space-y-6">
                   <div>
                     <h3 className="text-base md:text-lg font-medium text-slate-200">Kendriya Vidyalaya</h3>
                     <p className="text-sm text-slate-300">PCMCS 10+2</p>
                     <p className="text-xs text-slate-400">2010 - 2022</p>
-                    <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">Grade: 1st class</p>
+                    <p className="text-xs bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mt-1">Grade: 1st class</p>
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-medium text-slate-200">Sir M Visvesvaraya Institute of Technology</h3>
                     <p className="text-sm text-slate-300">Artificial Intelligence and Machine Learning (B.E)</p>
                     <p className="text-xs text-slate-400">2022 - 2026</p>
-                    <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">CGPA: 8.00</p>
+                    <p className="text-xs bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mt-1">CGPA: 8.00</p>
                   </div>
                 </div>
               </CardContent>

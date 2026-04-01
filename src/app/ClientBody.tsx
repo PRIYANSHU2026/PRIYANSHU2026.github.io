@@ -46,7 +46,7 @@ export default function ClientBody({
   }
 
   return (
-    <body className="antialiased bg-slate-950 text-slate-100 overflow-x-hidden" suppressHydrationWarning>
+    <body className="antialiased bg-background text-foreground overflow-x-hidden" suppressHydrationWarning>
       <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
       <AnimatedBackground />
       {!showWelcome && children}

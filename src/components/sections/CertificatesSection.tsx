@@ -320,16 +320,16 @@ export function CertificatesSection() {
     <motion.div
       key={certificate.id}
       variants={itemVariants}
-      className="bg-slate-900/50 hover:bg-slate-900/70 backdrop-blur-sm border border-slate-800/60 hover:border-indigo-600/20 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-600/10"
+      className="bg-card/50 hover:bg-card/70 backdrop-blur-sm border border-emerald-800/60 hover:border-emerald-600/20 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/10"
     >
       <div className="flex flex-col h-full">
         <div className="mb-2 flex justify-between items-start">
-          <div className="inline-block px-3 py-1 mb-2 text-xs font-medium rounded-full bg-indigo-600/10 text-indigo-400 border border-indigo-500/20">
+          <div className="inline-block px-3 py-1 mb-2 text-xs font-medium rounded-full bg-emerald-600/10 text-emerald-400 border border-emerald-500/20">
             {certificate.category.charAt(0).toUpperCase() + certificate.category.slice(1)}
           </div>
           <div className="text-sm text-gray-400">{formatDate(certificate.date)}</div>
         </div>
-        <h3 className="text-lg font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+        <h3 className="text-lg font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
           {certificate.title}
         </h3>
         <p className="text-sm text-gray-300 mb-4">{certificate.organization}</p>
@@ -341,7 +341,7 @@ export function CertificatesSection() {
         {certificate.skills && certificate.skills.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-2">
             {certificate.skills.map((skill, index) => (
-              <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-indigo-500/10">
+              <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-emerald-500/10">
                 {skill}
               </span>
             ))}
@@ -350,7 +350,7 @@ export function CertificatesSection() {
       </div>
       {certificate.link && (
         <div className="mt-4">
-          <Button asChild variant="outline" size="sm" className="bg-transparent text-indigo-400 border-indigo-500/30 hover:bg-indigo-950/30 hover:text-indigo-300">
+          <Button asChild variant="outline" size="sm" className="bg-transparent text-emerald-400 border-emerald-500/30 hover:bg-emerald-950/30 hover:text-emerald-300">
             <Link href={certificate.link} target="_blank">
               View <ExternalLink className="ml-2 h-3 w-3" />
             </Link>
@@ -362,13 +362,13 @@ export function CertificatesSection() {
 
   // Function to render hackathon certificates in a linear format
   const renderHackathonCertificates = (hackathonCertificates: Certificate[]) => (
-    <div className="bg-slate-900/60 border border-slate-800/60 rounded-lg p-4 md:p-8">
-      <h3 className="text-xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 border-b border-slate-800 pb-4">
+    <div className="bg-card/60 border border-emerald-800/60 rounded-lg p-4 md:p-8">
+      <h3 className="text-xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 border-b border-emerald-800 pb-4">
         Hackathon Participation & Achievements
       </h3>
       <div className="relative">
         {/* Vertical timeline line */}
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-600/30 via-purple-600/30 to-indigo-600/30 ml-3"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-600/30 via-teal-600/30 to-emerald-600/30 ml-3"></div>
         <div className="space-y-8">
           {hackathonCertificates.map((certificate) => (
             <motion.div
@@ -378,13 +378,13 @@ export function CertificatesSection() {
             >
               {/* Timeline dot */}
               <div className="relative">
-                <div className="h-6 w-6 rounded-full border-2 border-indigo-500 bg-slate-950 flex items-center justify-center -ml-3 z-10">
-                  <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
+                <div className="h-6 w-6 rounded-full border-2 border-emerald-500 bg-background flex items-center justify-center -ml-3 z-10">
+                  <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
                 </div>
               </div>
-              <div className="ml-6 flex-grow bg-slate-900/50 p-4 rounded-lg border border-slate-800/60 hover:border-indigo-600/20 hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-200">
+              <div className="ml-6 flex-grow bg-card/50 p-4 rounded-lg border border-emerald-800/60 hover:border-emerald-600/20 hover:shadow-lg hover:shadow-emerald-600/10 transition-all duration-200">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-1">
-                  <h4 className="text-base font-medium text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">{certificate.title}</h4>
+                  <h4 className="text-base font-medium text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">{certificate.title}</h4>
                   <span className="text-sm text-slate-400 whitespace-nowrap">{formatDate(certificate.date)}</span>
                 </div>
                 <p className="text-sm text-slate-300 mb-2">{certificate.organization}</p>
@@ -396,7 +396,7 @@ export function CertificatesSection() {
                 {certificate.skills && certificate.skills.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1">
                     {certificate.skills.map((skill, index) => (
-                      <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-indigo-500/10">
+                      <span key={index} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-emerald-500/10">
                         {skill}
                       </span>
                     ))}
@@ -404,7 +404,7 @@ export function CertificatesSection() {
                 )}
                 {certificate.link && (
                   <div className="mt-3">
-                    <Button asChild variant="outline" size="sm" className="bg-transparent h-8 text-indigo-400 border-indigo-500/30 hover:bg-indigo-950/30 hover:text-indigo-300">
+                    <Button asChild variant="outline" size="sm" className="bg-transparent h-8 text-emerald-400 border-emerald-500/30 hover:bg-emerald-950/30 hover:text-emerald-300">
                       <Link href={certificate.link} target="_blank">
                         View Certificate <ExternalLink className="ml-2 h-3 w-3" />
                       </Link>
@@ -422,20 +422,20 @@ export function CertificatesSection() {
   return (
     <section id="certificates" className="py-12 md:py-20 relative overflow-x-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/10 to-slate-950 opacity-50"></div>
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-indigo-900/5 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-indigo-900/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-emerald-950/10 to-background opacity-50"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-emerald-900/5 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-emerald-900/5 to-transparent"></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16 relative">
           {/* Decorative element */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl opacity-30"></div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10"
+            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent relative z-10"
           >
             Certificates & Achievements
           </motion.h2>
@@ -452,46 +452,46 @@ export function CertificatesSection() {
 
         <Tabs defaultValue="all" className="max-w-6xl mx-auto">
           {/* Change the TabsList style to match the theme */}
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-7 mb-8 bg-slate-900/60 border border-slate-800/60 rounded-lg p-1 backdrop-blur-sm">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-7 mb-8 bg-card/60 border border-emerald-800/60 rounded-lg p-1 backdrop-blur-sm">
             <TabsTrigger
               value="all"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               All
             </TabsTrigger>
             <TabsTrigger
               value="hackathon"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Hackathons
             </TabsTrigger>
             <TabsTrigger
               value="research"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Research
             </TabsTrigger>
             <TabsTrigger
               value="industry"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Industry
             </TabsTrigger>
             <TabsTrigger
               value="course"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Courses
             </TabsTrigger>
             <TabsTrigger
               value="open-source"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Open Source
             </TabsTrigger>
             <TabsTrigger
               value="conference"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600/20 data-[state=active]:to-teal-600/20 data-[state=active]:text-white"
             >
               Conferences
             </TabsTrigger>

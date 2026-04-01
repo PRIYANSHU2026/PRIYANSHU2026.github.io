@@ -24,12 +24,12 @@ const NeuralBackground = () => {
   const MOUSE_REPULSE_DISTANCE = 90;
   const SPEED = 0.3;
 
-  // Dark white-neon palette: mostly white/silver with faint indigo tints
+  // Dark white-neon palette: mostly white/silver with faint emerald tints
   const neonColors = [
     "255,255,255",   // pure white
     "220,225,255",   // ice white / very faint blue
     "200,210,255",   // soft lavender white
-    "180,200,255",   // faint indigo white
+    "180,200,255",   // faint emerald white
     "230,230,250",   // white with lavender
   ];
 

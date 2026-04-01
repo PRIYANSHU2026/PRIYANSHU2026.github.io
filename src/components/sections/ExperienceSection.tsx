@@ -27,7 +27,7 @@ const experiences: Experience[] = [
       "Architecting Knowledge Graph systems for complex data retrieval, relational mapping, and AI-driven insights",
     ],
     logo: "/images/experience/genieai.png",
-    color: "from-purple-600 to-indigo-600",
+    color: "from-teal-600 to-emerald-600",
   },
   {
     title: "GSoC 2026 Mentor",
@@ -89,7 +89,7 @@ const experiences: Experience[] = [
       "Conducted research on machine learning applications for predicting and controlling the frequency of Traveling Wave Tubes using a Feedforward Neural Network (FNN).",
     ],
     logo: "/images/experience/mtrdc.png",
-    color: "from-blue-500 to-indigo-500",
+    color: "from-blue-500 to-emerald-500",
   },
   {
     title: "Machine Learning Researcher",
@@ -100,7 +100,7 @@ const experiences: Experience[] = [
       "Developed a recommendation system for an e-commerce platform using collaborative filtering and deep learning techniques.",
     ],
     logo: "/images/experience/unboxing.png",
-    color: "from-purple-500 to-pink-500",
+    color: "from-teal-500 to-pink-500",
   },
   {
     title: "Research Intern",
@@ -111,7 +111,7 @@ const experiences: Experience[] = [
       "Worked on NLP-based research focusing on 'Transformer-Based Text Summarization for News Articles.'",
     ],
     logo: "/images/experience/drdo.png",
-    color: "from-indigo-500 to-purple-500",
+    color: "from-emerald-500 to-teal-500",
   },
 ];
 
@@ -122,7 +122,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 max-w-5xl relative z-10">
         <motion.div
@@ -132,20 +132,20 @@ export function ExperienceSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
             Experience
           </h2>
           <p className="mt-3 text-slate-400 max-w-2xl mx-auto text-sm md:text-base flex items-center justify-center gap-2">
-            <Briefcase className="w-4 h-4 text-purple-400" />
+            <Briefcase className="w-4 h-4 text-teal-400" />
             Professional Journey & Open Source Contributions
-            <Briefcase className="w-4 h-4 text-purple-400" />
+            <Briefcase className="w-4 h-4 text-teal-400" />
           </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-purple-500/30 to-transparent md:-translate-x-px" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/50 via-teal-500/30 to-transparent md:-translate-x-px" />
 
           {experiences.map((exp, index) => {
             const isLeft = index % 2 === 0;
@@ -161,7 +161,7 @@ export function ExperienceSection() {
                 } flex-row`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-indigo-500 border-2 border-purple-400 -translate-x-1.5 mt-6 z-10 shadow-[0_0_12px_rgba(99,102,241,0.8)]" />
+                <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-emerald-500 border-2 border-teal-400 -translate-x-1.5 mt-6 z-10 shadow-[0_0_12px_rgba(99,102,241,0.8)]" />
 
                 {/* Content card */}
                 <div
@@ -169,7 +169,7 @@ export function ExperienceSection() {
                     isLeft ? "md:mr-auto md:pr-12" : "md:ml-auto md:pl-12"
                   } md:w-[46%]`}
                 >
-                  <div className="group relative bg-slate-900/60 backdrop-blur-lg rounded-2xl p-5 md:p-6 border border-indigo-500/15 hover:border-purple-500/40 transition-all duration-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+                  <div className="group relative bg-card/60 backdrop-blur-lg rounded-2xl p-5 md:p-6 border border-emerald-500/15 hover:border-teal-500/40 transition-all duration-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)]">
                     {/* Gradient bg */}
                     <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${exp.color} opacity-[0.04] group-hover:opacity-[0.08] rounded-2xl transition-opacity duration-300`} />
 
@@ -187,7 +187,7 @@ export function ExperienceSection() {
                             target.style.display = 'none';
                             const parent = target.parentElement;
                             if (parent) {
-                              parent.innerHTML = `<span class="text-lg font-bold text-indigo-400">${exp.organization.charAt(0)}</span>`;
+                              parent.innerHTML = `<span class="text-lg font-bold text-emerald-400">${exp.organization.charAt(0)}</span>`;
                             }
                           }}
                         />
@@ -196,7 +196,7 @@ export function ExperienceSection() {
                         <h3 className="text-base md:text-lg font-semibold text-slate-100 leading-snug">
                           {exp.title}
                         </h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium mt-0.5">
+                        <p className="text-sm bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent font-medium mt-0.5">
                           {exp.subtitle} | {exp.organization}
                         </p>
                       </div>
@@ -212,7 +212,7 @@ export function ExperienceSection() {
                     <ul className="space-y-1.5">
                       {exp.description.map((desc, i) => (
                         <li key={i} className="text-sm text-slate-300 flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500/60 mt-1.5 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/60 mt-1.5 flex-shrink-0" />
                           {desc}
                         </li>
                       ))}

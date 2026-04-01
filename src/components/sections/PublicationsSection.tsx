@@ -77,16 +77,16 @@ export function PublicationsSection() {
   };
 
   return (
-    <section id="publications" className="py-16 sm:py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section id="publications" className="py-16 sm:py-20 bg-gradient-to-b from-card to-background">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="text-center mb-10 sm:mb-16 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-600/20 rounded-full blur-3xl opacity-30"></div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
+            className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 relative z-10"
           >
             Selected Publications
           </motion.h2>
@@ -111,9 +111,9 @@ export function PublicationsSection() {
             <motion.div
               key={publication.id}
               variants={itemVariants}
-              className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm rounded-lg p-6 hover:border-indigo-500/50 transition-colors group"
+              className="bg-card/60 border border-emerald-800/70 backdrop-blur-sm rounded-lg p-6 hover:border-emerald-500/50 transition-colors group"
             >
-              <h3 className="text-xl font-semibold mb-2 text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-colors">
+              <h3 className="text-xl font-semibold mb-2 text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-teal-400 transition-colors">
                 {publication.title}
               </h3>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -126,7 +126,7 @@ export function PublicationsSection() {
                     asChild
                     variant="outline"
                     size="sm"
-                    className="border-indigo-600/50 text-indigo-400 hover:bg-indigo-600/10 hover:text-indigo-300 transition-all duration-300"
+                    className="border-emerald-600/50 text-emerald-400 hover:bg-emerald-600/10 hover:text-emerald-300 transition-all duration-300"
                   >
                     <Link href={publication.link} target="_blank">
                       View Paper

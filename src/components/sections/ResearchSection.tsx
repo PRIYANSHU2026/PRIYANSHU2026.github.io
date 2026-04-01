@@ -55,16 +55,16 @@ export function ResearchSection() {
   };
 
   return (
-    <section id="research" className="py-16 sm:py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+    <section id="research" className="py-16 sm:py-20 bg-gradient-to-b from-background to-card">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="text-center mb-10 sm:mb-16 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-600/20 rounded-full blur-3xl opacity-30"></div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
+            className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 relative z-10"
           >
             Research Focus
           </motion.h2>
@@ -88,12 +88,12 @@ export function ResearchSection() {
         >
           {researchAreas.map((area) => (
             <motion.div key={area.id} variants={itemVariants}>
-              <Card className="bg-slate-900/60 border-slate-800/70 h-full hover:shadow-lg hover:shadow-indigo-600/10 transition-all duration-300 group">
+              <Card className="bg-card/60 border-emerald-800/70 h-full hover:shadow-lg hover:shadow-emerald-600/10 transition-all duration-300 group">
                 <CardContent className="p-4 md:p-6 flex flex-col items-center text-center">
-                  <div className="mb-4 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600/20 to-purple-600/20 text-indigo-400 group-hover:scale-110 transition-all duration-300">
+                  <div className="mb-4 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-600/20 to-teal-600/20 text-emerald-400 group-hover:scale-110 transition-all duration-300">
                     <area.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-colors">
+                  <h3 className="text-xl font-semibold mb-3 text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-teal-400 transition-colors">
                     {area.title}
                   </h3>
                   <p className="text-slate-300 text-sm md:text-base">{area.description}</p>

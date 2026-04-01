@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
@@ -35,10 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <ClientBody>
-        <div className={`font-sans bg-[#030014] text-white antialiased ${inter.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <div className={`font-sans bg-background text-foreground antialiased ${inter.variable}`}>
           {children}
           <Toaster position="top-center" richColors closeButton />
         </div>
+      </ThemeProvider>
       </ClientBody>
     </html>
   );

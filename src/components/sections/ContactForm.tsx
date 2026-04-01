@@ -157,7 +157,7 @@ export function ContactForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-3 rounded-lg transition-all duration-300 border-0 shadow-lg hover:shadow-blue-500/25"
+            className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-medium py-3 rounded-lg transition-all duration-300 border-0 shadow-lg hover:shadow-blue-500/25"
           >
             {isSubmitting ? (
               <>

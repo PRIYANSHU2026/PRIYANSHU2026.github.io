@@ -30,7 +30,7 @@ const projects: Project[] = [
       "GSOC 2025 project developing an AI-powered platform for generating personalized music exercises.",
     image: "/images/projects/Gsoc.png",
     tags: [
-      { name: "Generative AI", color: "bg-purple-500" },
+      { name: "Generative AI", color: "bg-teal-500" },
       { name: "Music Tech", color: "bg-blue-500" },
       { name: "Transformers", color: "bg-yellow-500" },
       { name: "GSoC", color: "bg-green-500" },
@@ -48,7 +48,7 @@ const projects: Project[] = [
     tags: [
       { name: "Financial AI", color: "bg-green-500" },
       { name: "NLP", color: "bg-blue-500" },
-      { name: "Dashboard", color: "bg-purple-500" },
+      { name: "Dashboard", color: "bg-teal-500" },
       { name: "MSoC", color: "bg-yellow-500" },
     ],
     technologies: ["Python", "scikit-learn", "NLTK", "Flask", "React", "D3.js", "Pandas"],
@@ -63,7 +63,7 @@ const projects: Project[] = [
     image: "/images/projects/Stock.png",
     tags: [
       { name: "Quant Finance", color: "bg-blue-500" },
-      { name: "Deep Learning", color: "bg-purple-500" },
+      { name: "Deep Learning", color: "bg-teal-500" },
       { name: "Sentiment Analysis", color: "bg-green-500" },
       { name: "Trading", color: "bg-red-500" },
     ],
@@ -80,7 +80,7 @@ const projects: Project[] = [
     tags: [
       { name: "3D Visualization", color: "bg-blue-500" },
       { name: "Medical Imaging", color: "bg-red-500" },
-      { name: "CBCT", color: "bg-purple-500" },
+      { name: "CBCT", color: "bg-teal-500" },
       { name: "Python", color: "bg-yellow-500" },
     ],
     technologies: ["Python", "VTK", "PyQt5", "SimpleITK", "NumPy", "Matplotlib"],
@@ -95,7 +95,7 @@ const projects: Project[] = [
     tags: [
       { name: "Agriculture", color: "bg-green-500" },
       { name: "Computer Vision", color: "bg-blue-500" },
-      { name: "CNN", color: "bg-purple-500" },
+      { name: "CNN", color: "bg-teal-500" },
       { name: "Disease Detection", color: "bg-red-500" },
     ],
     technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas"],
@@ -108,7 +108,7 @@ const projects: Project[] = [
       "Utilized an Artificial Neural Network (ANN) model to predict laboratory test outcomes with an accuracy of 88% for friction stir welding applications.",
     image: "/images/projects/ai-friction-stir-welding.png",
     tags: [
-      { name: "ANN", color: "bg-purple-500" },
+      { name: "ANN", color: "bg-teal-500" },
       { name: "Material Science", color: "bg-blue-500" },
       { name: "Manufacturing", color: "bg-orange-500" },
       { name: "Predictive Modeling", color: "bg-yellow-500" },
@@ -125,7 +125,7 @@ const projects: Project[] = [
     tags: [
       { name: "Financial ML", color: "bg-green-500" },
       { name: "Stock Prediction", color: "bg-blue-500" },
-      { name: "Web Apps", color: "bg-purple-500" },
+      { name: "Web Apps", color: "bg-teal-500" },
       { name: "Open Source", color: "bg-yellow-500" },
     ],
     technologies: ["Python", "TensorFlow", "Keras", "NumPy", "Pandas", "Flask", "React"],
@@ -139,7 +139,7 @@ const projects: Project[] = [
     image: "/images/projects/maxresdefault.jpg",
     tags: [
       { name: "NLP", color: "bg-blue-500" },
-      { name: "Transformers", color: "bg-purple-500" },
+      { name: "Transformers", color: "bg-teal-500" },
       { name: "Text Summarization", color: "bg-green-500" },
       { name: "Research", color: "bg-red-500" },
     ],
@@ -154,7 +154,7 @@ const projects: Project[] = [
     image: "/images/projects/20220302113914_210418-Figure-1.webp",
     tags: [
       { name: "Python", color: "bg-blue-500" },
-      { name: "Deep Learning", color: "bg-purple-500" },
+      { name: "Deep Learning", color: "bg-teal-500" },
       { name: "FNN", color: "bg-green-500" },
       { name: "Research", color: "bg-red-500" },
     ],
@@ -170,7 +170,7 @@ const projects: Project[] = [
     tags: [
       { name: "Medical AI", color: "bg-red-500" },
       { name: "Computer Vision", color: "bg-blue-500" },
-      { name: "Deep Learning", color: "bg-purple-500" },
+      { name: "Deep Learning", color: "bg-teal-500" },
       { name: "Healthcare", color: "bg-green-500" },
     ],
     technologies: ["Python", "TensorFlow", "OpenCV", "scikit-learn", "Keras"],
@@ -186,7 +186,7 @@ const projects: Project[] = [
       { name: "Machine Learning", color: "bg-blue-500" },
       { name: "Healthcare", color: "bg-green-500" },
       { name: "Predictive Models", color: "bg-yellow-500" },
-      { name: "Data Science", color: "bg-purple-500" },
+      { name: "Data Science", color: "bg-teal-500" },
     ],
     technologies: ["Python", "scikit-learn", "NumPy", "Pandas", "Matplotlib"],
     github: "https://github.com/PRIYANSHU2026/combinational-health-model.git",
@@ -213,9 +213,9 @@ export function ProjectsSection() {
   const isInView = useInView(ref, { once: false, amount: 0.1 });
 
   return (
-    <section id="projects" className="py-20 relative overflow-x-hidden bg-[#030014]">
+    <section id="projects" className="py-20 relative overflow-x-hidden bg-background">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/10 to-slate-950 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-emerald-950/10 to-background opacity-50"></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-20 relative">
@@ -224,9 +224,9 @@ export function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent relative z-10"
+            className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent relative z-10"
           >
-            A small selection of <span className="text-purple-400">recent projects</span>
+            A small selection of <span className="text-teal-400">recent projects</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -249,8 +249,8 @@ export function ProjectsSection() {
                 title={project.demo ? "Visit Live Site" : "View Source"}
                 href={project.demo || project.github}
               >
-                <div className="relative mb-8 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px] rounded-3xl bg-[#13162d]">
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 mix-blend-overlay z-10"></div>
+                <div className="relative mb-8 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px] rounded-3xl bg-card">
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-emerald-500/30 to-teal-500/30 mix-blend-overlay z-10"></div>
                   <Image
                     fill
                     src={project.image}
@@ -285,10 +285,10 @@ export function ProjectsSection() {
                   </div>
 
                   <div className="flex items-center justify-center">
-                    <p className="flex text-sm md:text-sm lg:text-base text-purple-400 font-medium">
+                    <p className="flex text-sm md:text-sm lg:text-base text-teal-400 font-medium">
                       {project.demo ? "Check Live Site" : "Read Source"}
                     </p>
-                    <ArrowRight className="ml-2 w-4 h-4 text-purple-400" />
+                    <ArrowRight className="ml-2 w-4 h-4 text-teal-400" />
                   </div>
                 </div>
               </PinContainer>

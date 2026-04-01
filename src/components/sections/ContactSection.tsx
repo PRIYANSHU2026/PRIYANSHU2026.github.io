@@ -28,9 +28,9 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background gradient effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card to-background"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-teal-600/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -39,7 +39,7 @@ export function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-teal-400 to-cyan-300 bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-slate-300 text-lg">
@@ -61,7 +61,7 @@ export function ContactSection() {
             <div className="space-y-8">
               <motion.div
                 variants={itemVariants}
-                className="group p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800/50 rounded-xl hover:border-indigo-500/20 transition duration-300"
+                className="group p-6 bg-card/60 backdrop-blur-sm border border-emerald-800/50 rounded-xl hover:border-emerald-500/20 transition duration-300"
               >
                 <div className="flex items-start">
                   <div className="flex-shrink-0 p-3 bg-blue-500/10 rounded-lg mr-4">
@@ -82,15 +82,15 @@ export function ContactSection() {
 
               <motion.div
                 variants={itemVariants}
-                className="group p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800/50 rounded-xl hover:border-indigo-500/20 transition duration-300"
+                className="group p-6 bg-card/60 backdrop-blur-sm border border-emerald-800/50 rounded-xl hover:border-emerald-500/20 transition duration-300"
               >
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 p-3 bg-purple-500/10 rounded-lg mr-4">
-                    <MapPin className="h-6 w-6 text-purple-400" />
+                  <div className="flex-shrink-0 p-3 bg-teal-500/10 rounded-lg mr-4">
+                    <MapPin className="h-6 w-6 text-teal-400" />
                   </div>
                   <div>
-                    <h4 className="text-slate-100 font-medium text-lg mb-1 group-hover:text-purple-400 transition-colors">Location</h4>
-                    <p className="text-slate-300 group-hover:text-purple-300 transition-colors">Bangalore, India</p>
+                    <h4 className="text-slate-100 font-medium text-lg mb-1 group-hover:text-teal-400 transition-colors">Location</h4>
+                    <p className="text-slate-300 group-hover:text-teal-300 transition-colors">Bangalore, India</p>
                   </div>
                 </div>
               </motion.div>
@@ -132,8 +132,8 @@ export function ContactSection() {
                   className="group"
                 >
                   <div className="relative">
-                    <div className="absolute inset-0 bg-purple-600 rounded-lg blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                    <div className="relative flex items-center justify-center h-12 w-12 rounded-lg bg-slate-800 border border-slate-700 group-hover:border-purple-500/50 text-slate-200 group-hover:text-purple-400 transition-all duration-300">
+                    <div className="absolute inset-0 bg-teal-600 rounded-lg blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative flex items-center justify-center h-12 w-12 rounded-lg bg-slate-800 border border-slate-700 group-hover:border-teal-500/50 text-slate-200 group-hover:text-teal-400 transition-all duration-300">
                       <Mail className="h-5 w-5" />
                     </div>
                   </div>
@@ -146,7 +146,7 @@ export function ContactSection() {
                   className="group"
                 >
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-teal-500 rounded-lg blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                     <div className="relative flex items-center justify-center h-12 w-12 rounded-lg bg-slate-800 border border-slate-700 group-hover:border-pink-500/50 text-slate-200 group-hover:text-pink-400 transition-all duration-300">
                       <Instagram className="h-5 w-5" />
                     </div>
@@ -161,8 +161,8 @@ export function ContactSection() {
             variants={itemVariants}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl blur-xl transform -rotate-3 scale-105 opacity-50"></div>
-            <div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-8 shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-teal-600/10 rounded-xl blur-xl transform -rotate-3 scale-105 opacity-50"></div>
+            <div className="relative bg-card/80 backdrop-blur-sm border border-emerald-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-8 shadow-xl">
               <h3 className="text-xl font-semibold mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Send Me a Message
               </h3>

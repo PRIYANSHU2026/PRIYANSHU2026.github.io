@@ -5,6 +5,7 @@ import { useScrollAnimation } from "@/lib/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
@@ -68,7 +69,7 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-slate-950/50 backdrop-blur-xl border-b border-slate-800/50"
+          ? "bg-background/50 backdrop-blur-xl border-b border-emerald-800/50"
           : "bg-transparent"
       )}
     >
@@ -80,7 +81,7 @@ export function Header() {
           transition={{ duration: 0.5 }}
         >
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="font-bold text-xl bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
               Priyanshu Tiwari
             </span>
           </Link>
@@ -120,14 +121,14 @@ export function Header() {
                 <span
                   className={`relative z-10 transition-colors duration-300 ${
                     activeSection === item.href
-                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold"
+                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-semibold"
                       : "text-slate-200 group-hover:text-white"
                   }`}
                 >
                   {item.name}
                 </span>
                 <span
-                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 transform origin-left transition-transform duration-300 ${
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-600 to-teal-600 transform origin-left transition-transform duration-300 ${
                     activeSection === item.href
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
@@ -146,19 +147,20 @@ export function Header() {
         >
           <Button
             asChild
-            className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg transition-all duration-300"
+            className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-2 rounded-lg transition-all duration-300"
           >
             <Link href="/images/PRIYANSHU_TIWARI-3.pdf" target="_blank" download>
               <span className="relative z-10">Download CV</span>
               <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </Link>
           </Button>
+          <ThemeToggle />
         </motion.div>
       </nav>
 
       {/* Mobile menu - animated overlay */}
       <div
-        className={`lg:hidden fixed inset-0 bg-slate-950 transition-all duration-300 ease-in-out ${
+        className={`lg:hidden fixed inset-0 bg-background transition-all duration-300 ease-in-out ${
           mobileMenuOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-[-100%] pointer-events-none"
@@ -177,7 +179,7 @@ export function Header() {
                 duration={500}
                 className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
                   activeSection === item.href
-                    ? "bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold"
+                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-semibold"
                     : "text-slate-200 hover:text-white"
                 }`}
                 style={{
@@ -190,10 +192,10 @@ export function Header() {
                 {item.name}
               </ScrollLink>
             ))}
-            <div className="pt-6 mt-6 border-t border-slate-800/50">
+            <div className="pt-6 mt-6 border-t border-emerald-800/50">
               <Button
                 asChild
-                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
+                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
               >
                 <Link href="/images/PRIYANSHU_TIWARI-3.pdf" target="_blank" download>
                   Download CV

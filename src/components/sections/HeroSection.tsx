@@ -12,7 +12,7 @@ import NeuralBackground from "@/components/ui/NeuralBackground";
 const SocialLink = ({ icon: Icon, link, label }: { icon: React.ElementType; link: string; label: string }) => (
   <a href={link} target="_blank" rel="noopener noreferrer" aria-label={label}>
     <button className="group relative p-3">
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
       <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
         <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
       </div>
@@ -119,15 +119,15 @@ export function HeroSection() {
               <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-tight drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
                   <span className="relative inline-block">
-                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-40"></span>
-                    <span className="relative bg-gradient-to-r from-white via-indigo-200 to-purple-300 bg-clip-text text-transparent">
+                    <span className="absolute -inset-2 bg-gradient-to-r from-emerald-600 to-teal-600 blur-2xl opacity-40"></span>
+                    <span className="relative bg-gradient-to-r from-white via-emerald-200 to-teal-300 bg-clip-text text-transparent">
                       Priyanshu
                     </span>
                   </span>
                   <br />
                   <span className="relative inline-block mt-2">
-                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-40"></span>
-                    <span className="relative bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
+                    <span className="absolute -inset-2 bg-gradient-to-r from-emerald-600 to-teal-600 blur-2xl opacity-40"></span>
+                    <span className="relative bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
                       Tiwari
                     </span>
                   </span>
@@ -139,7 +139,7 @@ export function HeroSection() {
                 <span className="text-lg md:text-xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
                   {text}
                 </span>
-                <span className="w-[3px] h-6 bg-gradient-to-t from-indigo-600 to-purple-600 ml-1 animate-pulse"></span>
+                <span className="w-[3px] h-6 bg-gradient-to-t from-emerald-600 to-teal-600 ml-1 animate-pulse"></span>
               </div>
 
               {/* Description */}
@@ -150,7 +150,7 @@ export function HeroSection() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">
-                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-indigo-400/20">
+                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-emerald-400/20">
                   <Link
                     to="about"
                     spy={true}
@@ -163,7 +163,7 @@ export function HeroSection() {
                     <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </Link>
                 </Button>
-                <Button asChild className="group relative overflow-hidden border border-indigo-600/50 hover:border-purple-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] bg-black/30">
+                <Button asChild className="group relative overflow-hidden border border-emerald-600/50 hover:border-teal-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] bg-black/30">
                   <Link
                     to="contact"
                     spy={true}
@@ -172,8 +172,8 @@ export function HeroSection() {
                     duration={500}
                     className="cursor-pointer"
                   >
-                    <span className="relative z-10 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Contact Me</span>
-                    <span className="absolute inset-0 bg-indigo-600/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    <span className="relative z-10 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Contact Me</span>
+                    <span className="absolute inset-0 bg-emerald-600/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </Link>
                 </Button>
               </div>
@@ -198,7 +198,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative w-full h-full max-w-md mx-auto lg:max-w-lg overflow-hidden rounded-xl">
-              <div className={`absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl blur-3xl transition-all duration-700 ease-in-out ${
+              <div className={`absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-xl blur-3xl transition-all duration-700 ease-in-out ${
                 isHovering ? "opacity-70 scale-105" : "opacity-30 scale-100"
               }`}></div>
 
@@ -209,7 +209,7 @@ export function HeroSection() {
                   key={currentGifIndex}
                   src={ML_GIFS[currentGifIndex].src}
                   alt={ML_GIFS[currentGifIndex].alt}
-                  className="w-full h-auto object-cover rounded-xl border border-indigo-500/30 shadow-xl z-10 relative"
+                  className="w-full h-auto object-cover rounded-xl border border-emerald-500/30 shadow-xl z-10 relative"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
@@ -250,7 +250,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 rounded-xl border border-indigo-400/20 shadow-inner pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-xl border border-emerald-400/20 shadow-inner pointer-events-none"></div>
             </div>
           </motion.div>
         </div>

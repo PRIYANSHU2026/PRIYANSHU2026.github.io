@@ -11,7 +11,7 @@ export function ResumeSection() {
   const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   return (
-    <section id="resume" className="py-20 bg-slate-950 overflow-hidden">
+    <section id="resume" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
@@ -37,7 +37,7 @@ export function ResumeSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
-            className="bg-slate-900/60 border border-slate-800 rounded-lg p-6 md:p-8 overflow-hidden shadow-lg"
+            className="bg-card/60 border border-emerald-800 rounded-lg p-6 md:p-8 overflow-hidden shadow-lg"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
               <div>

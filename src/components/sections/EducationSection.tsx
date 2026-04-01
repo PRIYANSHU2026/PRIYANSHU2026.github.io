@@ -66,7 +66,7 @@ export function EducationSection() {
   };
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section id="education" className="py-20 bg-gradient-to-b from-card to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

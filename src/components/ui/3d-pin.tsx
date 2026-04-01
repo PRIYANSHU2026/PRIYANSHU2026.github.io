@@ -49,7 +49,7 @@ export const PinContainer = ({
             style={{
               transform: transform,
             }}
-            className="absolute left-1/2 top-1/2 flex items-start justify-start overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700 group-hover/pin:border-white/[0.2] bg-[#0f111a]"
+            className="absolute left-1/2 top-1/2 flex items-start justify-start overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700 group-hover/pin:border-white/[0.2] bg-card"
           >
             <div className={cn("relative z-50", className)}>{children}</div>
           </div>
@@ -63,14 +63,14 @@ export const PinContainer = ({
           href={href || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-2xl border border-white/[0.1] p-4 bg-[#0f111a] active:scale-[0.98] transition-transform duration-200"
+          className="block rounded-2xl border border-white/[0.1] p-4 bg-card active:scale-[0.98] transition-transform duration-200"
         >
           <div className={cn("relative", className)}>{children}</div>
-          <div className="mt-4 flex items-center justify-center gap-2 py-2 rounded-lg bg-indigo-600/20 border border-indigo-500/30">
-            <span className="text-sm font-medium text-indigo-300">
+          <div className="mt-4 flex items-center justify-center gap-2 py-2 rounded-lg bg-emerald-600/20 border border-emerald-500/30">
+            <span className="text-sm font-medium text-emerald-300">
               {title || "View Project"}
             </span>
-            <svg className="w-4 h-4 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </div>
@@ -95,7 +95,7 @@ export const PinPerspective = ({
             href={href || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="pointer-events-auto relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 hover:ring-indigo-500/50 transition-all duration-300"
+            className="pointer-events-auto relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 hover:ring-emerald-500/50 transition-all duration-300"
           >
             <span className="relative z-20 text-white text-xs font-bold inline-block py-0.5">
               {title}
@@ -118,28 +118,28 @@ export const PinPerspective = ({
               initial={{ opacity: 0, scale: 0, x: "-50%", y: "-50%" }}
               animate={{ opacity: [0, 1, 0.5, 0], scale: 1, z: 0 }}
               transition={{ duration: 6, repeat: Infinity, delay: 0 }}
-              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-indigo-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-emerald-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0, x: "-50%", y: "-50%" }}
               animate={{ opacity: [0, 1, 0.5, 0], scale: 1, z: 0 }}
               transition={{ duration: 6, repeat: Infinity, delay: 2 }}
-              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-indigo-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-emerald-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0, x: "-50%", y: "-50%" }}
               animate={{ opacity: [0, 1, 0.5, 0], scale: 1, z: 0 }}
               transition={{ duration: 6, repeat: Infinity, delay: 4 }}
-              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-indigo-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2 h-[11.25rem] w-[11.25rem] rounded-[50%] bg-emerald-500/[0.15] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             />
           </>
         </div>
 
         <>
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-indigo-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]" />
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-indigo-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40" />
-          <motion.div className="absolute right-1/2 bottom-1/2 translate-x-[1.5px] translate-y-[14px] w-[4px] h-[4px] rounded-full z-40 bg-indigo-600 blur-[3px]" />
-          <motion.div className="absolute right-1/2 bottom-1/2 translate-x-[0.5px] translate-y-[14px] w-[2px] h-[2px] rounded-full z-40 bg-indigo-300" />
+          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-emerald-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]" />
+          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-emerald-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40" />
+          <motion.div className="absolute right-1/2 bottom-1/2 translate-x-[1.5px] translate-y-[14px] w-[4px] h-[4px] rounded-full z-40 bg-emerald-600 blur-[3px]" />
+          <motion.div className="absolute right-1/2 bottom-1/2 translate-x-[0.5px] translate-y-[14px] w-[2px] h-[2px] rounded-full z-40 bg-emerald-300" />
         </>
       </div>
     </motion.div>

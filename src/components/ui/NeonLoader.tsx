@@ -10,7 +10,7 @@ const NeonLoader = () => {
         width="180"
         height="180"
         viewBox="0 0 100 100"
-        className="drop-shadow-[0_0_20px_rgba(99,102,241,0.8)] text-indigo-500"
+        className="drop-shadow-[0_0_20px_rgba(99,102,241,0.8)] text-emerald-500"
       >
         {/* Outer Hexagon */}
         <motion.polygon
@@ -33,7 +33,7 @@ const NeonLoader = () => {
         <motion.polygon
           points="50,15 84.6,35 84.6,65 50,85 15.4,65 15.4,35"
           fill="none"
-          stroke="#a855f7"
+          stroke="#059669"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -73,8 +73,8 @@ const NeonLoader = () => {
         {/* Gradient for text */}
         <defs>
           <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#818cf8" />
-            <stop offset="100%" stopColor="#c084fc" />
+            <stop offset="0%" stopColor="#10b981" />
+            <stop offset="100%" stopColor="#14b8a6" />
           </linearGradient>
         </defs>
       </motion.svg>
