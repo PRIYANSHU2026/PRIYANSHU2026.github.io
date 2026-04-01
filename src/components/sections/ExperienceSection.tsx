@@ -40,7 +40,7 @@ const experiences: Experience[] = [
       "Mentoring projects on neuron brain simulation and Harmony Hub under INCF in collaboration with University of Manchester and McGill University",
       "Providing technical guidance on LLMs, transformer architectures, and financial AI systems",
     ],
-    logo: "/images/experience/Gsoc.png",
+    logo: "/images/experience/GSoC.png",
     color: "from-green-600 to-teal-600",
   },
   {
@@ -65,7 +65,7 @@ const experiences: Experience[] = [
       'Developed "Harmony Hub": generative AI platform for adaptive music learning using transformers',
       "Built music learning LLM to enhance student engagement",
     ],
-    logo: "/images/experience/Gsoc.png",
+    logo: "/images/experience/GSoC.png",
     color: "from-green-500 to-blue-500",
   },
   {
