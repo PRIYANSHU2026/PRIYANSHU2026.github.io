@@ -2,9 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react";
+import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles } from "lucide-react";
 import TechStack from "@/components/ui/TechStack";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,7 +64,7 @@ const StatCard = ({ icon: Icon, color, value, label, description, animation }: {
     transition={{ duration: 0.5 }}
     className="relative group"
   >
-    <div className="relative z-10 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
+    <div className="relative z-10 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-indigo-500/20 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:border-purple-500/40 h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
 
       <div className="flex items-center justify-between mb-4">
@@ -159,7 +158,7 @@ export function AboutSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl opacity-30"></div>
 
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative z-10"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500 relative z-10 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
             >
               About Me
             </h2>
@@ -238,7 +237,7 @@ export function AboutSection() {
                   download
                   className="w-full sm:w-auto"
                 >
-                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-600/20">
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-indigo-400/20">
                     <FileText className="w-4 h-4 md:w-5 md:h-5" /> Download CV
                   </button>
                 </Link>
@@ -247,7 +246,7 @@ export function AboutSection() {
                   href="#projects"
                   className="w-full sm:w-auto"
                 >
-                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-600/50 text-purple-600 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10">
+                  <button className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-600/50 text-purple-400 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-purple-600/10 shadow-[0_0_10px_rgba(168,85,247,0.1)] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                     <Code className="w-4 h-4 md:w-5 md:h-5" /> View Projects
                   </button>
                 </Link>
@@ -298,96 +297,29 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Education and Experience Tabs - fixed for mobile */}
+          {/* Education Section */}
           <div className="max-w-4xl mx-auto">
-            <Tabs defaultValue="education" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
-                <TabsTrigger
-                  value="education"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
-                >
-                  Education
-                </TabsTrigger>
-                <TabsTrigger
-                  value="experience"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600/20 data-[state=active]:to-purple-600/20 data-[state=active]:text-white"
-                >
-                  Experience
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="education" className="mt-6">
-                <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
-                  <CardContent className="p-4 md:p-6 space-y-4">
-                    <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Kendriya Vidyalaya</h3>
-                        <p className="text-sm text-slate-300">PCMCS 10+2</p>
-                        <p className="text-xs text-slate-400">2010 - 2022</p>
-                        <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">Grade: 1st class</p>
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Sir M Visvesvaraya Institute of Technology</h3>
-                        <p className="text-sm text-slate-300">Artificial Intelligence and Machine Learning (B.E)</p>
-                        <p className="text-xs text-slate-400">2022 - 2026</p>
-                        <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">CGPA: 8.00</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="experience" className="mt-6">
-                <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
-                  <CardContent className="p-4 md:p-6 space-y-4">
-                    <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Google Summer of Code (GSoC) 2025 Contributor</h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Open-Source Developer | International Neuroinformatics Coordinating Facility (INCF)</p>
-                        <p className="text-xs text-slate-400">May 2025 – Present</p>
-                        <p className="text-sm text-slate-300 mt-1">
-                          - Developed "Harmony Hub": generative AI platform for adaptive music learning using transformers
-                          <br />- Built music learning LLM to enhance student engagement
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Mifos Summer of Code (MSoC) 2025 Contributor</h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Open-Source Developer | Mifos Initiative</p>
-                        <p className="text-xs text-slate-400">May 2025 – Present</p>
-                        <p className="text-sm text-slate-300 mt-1">
-                          - Enhanced Bank Statement Analyzer Phase 2
-                          <br />- Developed recommendation models for personalized financial insights
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Research Intern</h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DRDO – Microwave Tube Research & Development Centre (MTRDC)</p>
-                        <p className="text-xs text-slate-400">Nov 2024 – Dec 2024</p>
-                        <p className="text-sm text-slate-300 mt-1">
-                          Conducted research on machine learning applications for predicting and controlling the frequency of Traveling Wave Tubes using a Feedforward Neural Network (FNN).
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Machine Learning Researcher</h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Unboxing Community</p>
-                        <p className="text-xs text-slate-400">Sep 2024 – Nov 2024</p>
-                        <p className="text-sm text-slate-300 mt-1">
-                          Developed a recommendation system for an e-commerce platform using collaborative filtering and deep learning techniques.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-medium text-slate-200">Research Intern</h3>
-                        <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DRDO – Centre for Artificial Intelligence and Robotics (CAIR)</p>
-                        <p className="text-xs text-slate-400">April 2024 – May 2024</p>
-                        <p className="text-sm text-slate-300 mt-1">
-                          Worked on NLP-based research focusing on 'Transformer-Based Text Summarization for News Articles.'
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent text-center">
+              Education
+            </h3>
+            <Card className="bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm">
+              <CardContent className="p-4 md:p-6 space-y-4">
+                <div className="border-l-2 border-indigo-500 pl-4 space-y-6">
+                  <div>
+                    <h3 className="text-base md:text-lg font-medium text-slate-200">Kendriya Vidyalaya</h3>
+                    <p className="text-sm text-slate-300">PCMCS 10+2</p>
+                    <p className="text-xs text-slate-400">2010 - 2022</p>
+                    <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">Grade: 1st class</p>
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-medium text-slate-200">Sir M Visvesvaraya Institute of Technology</h3>
+                    <p className="text-sm text-slate-300">Artificial Intelligence and Machine Learning (B.E)</p>
+                    <p className="text-xs text-slate-400">2022 - 2026</p>
+                    <p className="text-xs bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mt-1">CGPA: 8.00</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </motion.div>
       </div>

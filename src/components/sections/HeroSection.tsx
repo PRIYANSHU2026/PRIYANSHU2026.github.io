@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 import { Github, Linkedin, Mail, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import NeuralBackground from "@/components/ui/NeuralBackground";
 
 // Memoized Components for better performance
 const SocialLink = ({ icon: Icon, link, label }: { icon: React.ElementType; link: string; label: string }) => (
@@ -102,6 +103,8 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative py-16 md:py-24 lg:py-28 overflow-hidden min-h-[85vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-center">
+      {/* Neural Network Particle Background */}
+      <NeuralBackground />
       <div className={`relative z-10 transition-all duration-1000 w-full ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto px-4 md:px-8 max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
           <motion.div
@@ -114,17 +117,17 @@ export function HeroSection() {
           >
             <div className="space-y-4 sm:space-y-6">
               <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-tight drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
                   <span className="relative inline-block">
-                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-20"></span>
-                    <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-40"></span>
+                    <span className="relative bg-gradient-to-r from-white via-indigo-200 to-purple-300 bg-clip-text text-transparent">
                       Priyanshu
                     </span>
                   </span>
                   <br />
                   <span className="relative inline-block mt-2">
-                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-20"></span>
-                    <span className="relative bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    <span className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 blur-2xl opacity-40"></span>
+                    <span className="relative bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
                       Tiwari
                     </span>
                   </span>
@@ -147,7 +150,7 @@ export function HeroSection() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">
-                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-lg transition-all duration-300">
+                <Button asChild className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] border border-indigo-400/20">
                   <Link
                     to="about"
                     spy={true}
@@ -160,7 +163,7 @@ export function HeroSection() {
                     <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </Link>
                 </Button>
-                <Button asChild className="group relative overflow-hidden border border-indigo-600/50 hover:border-indigo-600 text-white px-5 py-2 rounded-lg transition-all duration-300">
+                <Button asChild className="group relative overflow-hidden border border-indigo-600/50 hover:border-purple-500 text-white px-5 py-2 rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] bg-black/30">
                   <Link
                     to="contact"
                     spy={true}

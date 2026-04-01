@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import WelcomeScreen from "@/components/ui/WelcomeScreen";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 
 export default function ClientBody({
   children,
@@ -21,27 +19,26 @@ export default function ClientBody({
     // Remove any extension-added classes during hydration
     document.body.className = "";
 
-    // Initialize AOS with more responsive settings
-    AOS.init({
-      once: false,
-      mirror: false,
-      duration: 800,
-      offset: 30,
-      easing: 'ease-in-out',
-      delay: 100,
-      debounceDelay: 50,
-      throttleDelay: 99,
+    // Dynamically import AOS only on the client to avoid SSR localStorage crash
+    import('aos/dist/aos.css');
+    import('aos').then((AOS) => {
+      AOS.default.init({
+        once: false,
+        mirror: false,
+        duration: 800,
+        offset: 30,
+        easing: 'ease-in-out',
+        delay: 100,
+        debounceDelay: 50,
+        throttleDelay: 99,
+      });
+
+      // Refresh AOS on window resize for better responsiveness
+      const handleResize = () => {
+        AOS.default.refresh();
+      };
+      window.addEventListener('resize', handleResize);
     });
-
-    // Refresh AOS on window resize for better responsiveness
-    const handleResize = () => {
-      AOS.refresh();
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   if (!isMounted) {

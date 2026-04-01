@@ -2,11 +2,9 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-import { ExternalLink, Code2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 interface ProjectTag {
   name: string;
@@ -210,143 +208,91 @@ const projects: Project[] = [
   },
 ];
 
-interface ProjectCardProps {
-  project: Project;
-}
-
-const ProjectCard = ({ project }: ProjectCardProps) => {
-  return (
-    <div className="group bg-slate-900/50 hover:bg-slate-900/70 backdrop-blur-sm border border-slate-800/60 hover:border-indigo-600/20 rounded-xl overflow-hidden shadow-lg hover:shadow-indigo-600/10 transition-all duration-300 flex flex-col h-full">
-      <div className="p-5">
-        <div className="relative overflow-hidden rounded-lg mb-4">
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={400}
-            height={225}
-            className="w-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-500"
-          />
-
-          {/* Overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/90 via-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <div className="w-full">
-              <div className="flex flex-wrap gap-1 mb-2">
-                {project.tags.slice(0, 3).map((tag, index) => (
-                  <span
-                    key={index}
-                    className={`text-xs px-2 py-0.5 rounded-full text-white border border-white/10 ${tag.color} bg-opacity-40`}
-                  >
-                    {tag.name}
-                  </span>
-                ))}
-                {project.tags.length > 3 && (
-                  <span className="bg-slate-600 bg-opacity-30 text-xs px-2 py-0.5 rounded-full text-white border border-slate-600 border-opacity-20">
-                    +{project.tags.length - 3}
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-grow space-y-3">
-          <h3 className="text-xl font-semibold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            {project.title}
-          </h3>
-
-          <p className="text-gray-300/80 text-sm leading-relaxed line-clamp-3">
-            {project.description}
-          </p>
-        </div>
-
-        <div className="pt-4 flex items-center justify-between mt-4">
-          <Link
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
-          >
-            <span className="text-sm font-medium">GitHub</span>
-            <FaGithub className="w-4 h-4" />
-          </Link>
-
-          {project.demo ? (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-            >
-              <span className="text-sm font-medium">Demo</span>
-              <ExternalLink className="w-4 h-4" />
-            </Link>
-          ) : (
-            <Link
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-            >
-              <span className="text-sm font-medium">Details</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false, amount: 0.1 });
 
   return (
-    <section id="projects" className="py-12 md:py-20 relative overflow-x-hidden">
+    <section id="projects" className="py-20 relative overflow-x-hidden bg-[#030014]">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/10 to-slate-950 opacity-50"></div>
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-indigo-900/5 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-indigo-900/5 to-transparent"></div>
 
-      {/* Content */}
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-12 md:mb-16 relative">
-          {/* Decorative element */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl opacity-30"></div>
-
+        <div className="text-center mb-12 md:mb-20 relative">
           <motion.h2
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10"
-            data-aos="fade-up"
+            className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent relative z-10"
           >
-            Projects & Applications
+            A small selection of <span className="text-purple-400">recent projects</span>
           </motion.h2>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-300 max-w-3xl mx-auto text-sm md:text-base relative z-10"
-            data-aos="fade-up"
-            data-aos-delay="200"
           >
             Showcasing the practical applications of my research in artificial
             intelligence and machine learning.
           </motion.p>
         </div>
 
-        <div
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-24 gap-y-12 p-4">
+          {projects.map((project) => (
+            <div
               key={project.id}
-              project={project}
-            />
+              className="flex h-[32rem] w-[90vw] items-center justify-center sm:h-[41rem] sm:w-[570px] lg:min-h-[32.5rem]"
+            >
+              <PinContainer
+                title={project.demo ? "Visit Live Site" : "View Source"}
+                href={project.demo || project.github}
+              >
+                <div className="relative mb-8 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px] rounded-3xl bg-[#13162d]">
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 mix-blend-overlay z-10"></div>
+                  <Image
+                    fill
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover object-center z-0 transition-transform duration-500 group-hover/pin:scale-110"
+                  />
+                </div>
+
+                <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl text-slate-100">
+                  {project.title}
+                </h1>
+
+                <p className="line-clamp-2 text-sm font-light lg:text-lg lg:font-normal text-slate-300 mt-2">
+                  {project.description}
+                </p>
+
+                <div className="mb-3 mt-7 flex items-center justify-between">
+                  <div className="flex items-center flex-wrap gap-2 max-w-[70%]">
+                    {project.tags.slice(0, 3).map((tag, i) => (
+                      <span
+                        key={i}
+                        className={`text-[10px] sm:text-xs px-3 py-1 rounded-full text-white bg-opacity-30 border border-white/10 ${tag.color}`}
+                      >
+                        {tag.name}
+                      </span>
+                    ))}
+                    {project.tags.length > 3 && (
+                      <span className="text-[10px] sm:text-xs px-2 py-1 rounded-full bg-slate-800 text-slate-300 border border-white/10">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-center">
+                    <p className="flex text-sm md:text-sm lg:text-base text-purple-400 font-medium">
+                      {project.demo ? "Check Live Site" : "Read Source"}
+                    </p>
+                    <ArrowRight className="ml-2 w-4 h-4 text-purple-400" />
+                  </div>
+                </div>
+              </PinContainer>
+            </div>
           ))}
         </div>
       </div>
